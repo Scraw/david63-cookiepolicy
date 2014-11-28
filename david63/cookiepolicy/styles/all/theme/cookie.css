@@ -1,0 +1,27 @@
+#cookie-policy {
+	clear: both;
+}
+
+.cookie-box {
+	position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 200px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #FFFF8A;
+    padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	color: #FFFF33;
+    background-color: #163B60;
+    display: none;
+	float:right;
+}
+
+ .cookie-box a {
+	float: right;
+	color: #FFFFFF;
+	font-weight: bold;
+}

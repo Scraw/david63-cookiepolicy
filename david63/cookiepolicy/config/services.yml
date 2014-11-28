@@ -1,0 +1,18 @@
+services:
+    david63.cookiepolicy.listener:
+        class: david63\cookiepolicy\event\listener
+        arguments:
+            - @config
+            - @request
+            - @template
+            - @user
+            - @controller.helper
+        tags:
+            - { name: event.listener }
+
+    david63.cookiepolicy.controller:
+        class: david63\cookiepolicy\controller\main
+        arguments:
+            - @controller.helper
+            - @template
+            - @user

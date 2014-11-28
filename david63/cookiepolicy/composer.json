@@ -1,0 +1,31 @@
+{
+	"name": "david63/cookiepolicy",
+	"type": "phpbb-extension",
+	"description": "Adds an option for the user to accept the use of cookies, under EU Cookie Directive (2012), on the forum",
+	"homepage": "",
+	"version": "1.0.0",
+	"time": "2014-11-28",
+	"keywords": ["phpbb", "extension", "cookie", "ACP", "EU"],
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "David Wood",
+			"username": "david63",
+			"email": "david@webworld.xyz",
+			"homepage": "http://webworld.xyz/viewforum.php?f=4",
+			"role": "Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "Cookie Policy",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.2"
+      },
+		"version-check": {
+			"host": "webworld.xyz",
+			"directory": "/versioncheck",
+			"filename": "cookiepolicy_versions.json"
+		}
+	}
+}
