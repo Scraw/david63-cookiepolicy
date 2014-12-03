@@ -11,6 +11,9 @@ namespace david63\cookiepolicy\controller;
 
 class main
 {
+	/** @var \phpbb\config\config */
+	protected $config;
+
 	/* @var \phpbb\controller\helper */
 	protected $helper;
 
@@ -27,8 +30,9 @@ class main
 	* @param \phpbb\template\template	$template
 	* @param \phpbb\user				$user
 	*/
-	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config)
 	{
+		$this->config	= $config;
 		$this->helper	= $helper;
 		$this->template	= $template;
 		$this->user		= $user;
@@ -42,7 +46,7 @@ class main
 	*/
 	public function display($name)
 	{
-		$this->template->assign_var('COOKIE_MESSAGE', $this->user->lang('COOKIE_TEXT', $name));
+		$this->template->assign_var('COOKIE_MESSAGE', sprintf($this->user->lang('COOKIE_TEXT', $this->config['sitename'])));
 
 		return $this->helper->render('cookie_body.html', $name);
 	}

@@ -57,7 +57,9 @@ Mõningad küpsised sisaldavad personaalset informatsiooni – nagu näiteks, ku
 <a href="http://www.aki.ee/et/kupsised/" style="text-decoration:none">www.aki.ee/et/kupsised</a></a></p>
 <p>Palun pea meeles et kui sa otsustad keelata küpsised, siis mõningad kohad veebilehel %1$s ei pruugi töötada korralikult.</p>
 <h3>Küpsised veebilehel %1$s sotsiaalvõrgustikke lehekülgedelt</h3><p>%1$s\'s võib olla linke sotsiaalvõrgustike veebilehtedele (nt Facebook, Twitter, Google või YouTube). Samuti antud veebilehed võivad lisada need küpsiseid sinu seadmesse, neid küpsiseid %1$s ei kontrolli, ning seega %1$s soovitab lugeda täpsemat informatsiooni kuidas antud veebilehed küpsiseid kasutavad nende endi veebilehekülgedelt.',
+
 	'LOG_COOKIE_ERROR'		=> '<strong>Ebaõnnestunud IP otsing</stong>',
+	'LOG_SERVER_ERROR'		=> '<strong>Ei saanud ühendust IP server</strong>',
 ));
 
 ?>

@@ -56,7 +56,9 @@ Algunas galletas contienen información personal - por ejemplo, si hace clic en 
 <a href style="text-decoration:none">www.allaboutcookies.org</a></a></p>
 <p>Por favor, recuerde que si usted decide desactivar las cookies, es posible que ciertas secciones de %1$s no funcionen correctamente.</p>
 <h3>Cookies de %1$s de redes sociales</h3><p>%1$s puede tener enlaces a sitios web de redes sociales (por ejemplo, Facebook, Twitter o You Tube). Estos sitios web también pueden colocar cookies en su dispositivo y %1$s no controla la forma en que utilizan sus cookies, por lo tanto, %1$s le invita a comprobar su sitio web para ver cómo están utilizando cookies.',
+
 	'LOG_COOKIE_ERROR'		=> '<strong>Error de búsqueda de IP</stong>',
+	'LOG_SERVER_ERROR'		=> '<strong>No se pudo conectar con el servidor IP</strong>',
 ));
 
 ?>

@@ -16,3 +16,4 @@ services:
             - @controller.helper
             - @template
             - @user
+            - @config

@@ -58,6 +58,7 @@ Certain cookies contain personal information – for example, if you click on "r
 <h3>Cookies on %1$s from social networking sites</h3><p>%1$s may have links to social networking websites (e.g. Facebook, Twitter or You Tube). These websites may also place cookies on your device and %1$s does not control how they use their cookies, therefore %1$s suggests you check their website(s) to see how they are using cookies.',
 
 	'LOG_COOKIE_ERROR'		=> '<strong>Failed IP lookup</stong>',
+	'LOG_SERVER_ERROR'		=> '<strong>Could not connect to IP server</strong>',
 ));
 
 ?>

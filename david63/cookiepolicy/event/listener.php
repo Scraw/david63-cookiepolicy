@@ -142,12 +142,13 @@ class listener implements EventSubscriberInterface
 			$cookie_enabled = true;
 
 			// Check that the server is available
-			$server_ok = fsockopen('www.ip-api.com', 80);
+			$server_ok = false;
+			$server_ok = @fsockopen('www.ip-api.com', 80);
 			if ($server_ok)
 			{
 				$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
 
-				$ip_query = file_get_contents('http://ip-api.com/json/' . $user->data['session_ip'] . '?fields=status,countryCode');
+				$ip_query = file_get_contents('http://ip-api.com/json/' . $this->user->data['session_ip'] . '?fields=status,countryCode');
 				$ip_array = json_decode($ip_query, true);
 
 				if ($ip_array['status'] == 'success' && !in_array($ip_array['countryCode'], $eu_array))
@@ -157,8 +158,12 @@ class listener implements EventSubscriberInterface
 				}
 				else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
 				{
-					$phpbb_log->add('admin', 'LOG_COOKIE_ERROR', $user->data['user_id']);
+					$phpbb_log->add('admin', 'LOG_COOKIE_ERROR', $this->user->data['user_id']);
 				}
+			}
+			else
+			{
+				$phpbb_log->add('admin', 'LOG_SERVER_ERROR', $this->user->data['user_id']);
 			}
 		}
 
