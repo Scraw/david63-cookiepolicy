@@ -1,0 +1,65 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_COOKIE_POLICY}</h1>
+<p>{L_COOKIE_POLICY_EXPLAIN}</p>
+
+<form id="sitelogo" method="post" action="{U_ACTION}">
+
+	<fieldset>
+		<legend>{L_COOKIE_POLICY_OPTIONS}</legend>
+
+		<dl>
+			<dt><label for="cookie_policy_enabled">{L_COOKIE_POLICY_ENABLE}{L_COLON}</label><br /><span>{L_COOKIE_POLICY_ENABLE_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_policy_enabled" value="1" id="cookie_policy_enabled"<!-- IF COOKIE_POLICY_ENABLED --> checked="checked"<!-- ENDIF -->/> {L_ENABLE}</label>
+				<label><input type="radio" class="radio" name="cookie_policy_enabled" value="0" <!-- IF not COOKIE_POLICY_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_DISABLE}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_eu_detect">{L_COOKIE_DETECT}{L_COLON}</label><br /><span>{L_COOKIE_DETECT_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_eu_detect" value="1" id="cookie_eu_detect"<!-- IF COOKIE_POLICY_EU_DETECT --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_eu_detect" value="0" <!-- IF not COOKIE_POLICY_EU_DETECT --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_not_eu_detect">{L_COOKIE_UN_DETECT}{L_COLON}</label><br /><span>{L_COOKIE_UN_DETECT_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_not_eu_detect" value="1" id="cookie_not_eu_detect"<!-- IF COOKIE_POLICY_NOT_EU_DETECT --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_not_eu_detect" value="0" <!-- IF not COOKIE_POLICY_NOT_EU_DETECT --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_on_index">{L_COOKIE_POLICY_ON_INDEX}{L_COLON}</label><br /><span>{L_COOKIE_POLICY_ON_INDEX_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_on_index" value="1" id="cookie_on_index"<!-- IF COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF -->/> {L_ALL}</label>
+				<label><input type="radio" class="radio" name="cookie_on_index" value="0" <!-- IF not COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF --> /> {L_INDEX}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_expire">{L_COOKIE_EXPIRE}{L_COLON}</label><br /><span>{L_COOKIE_EXPIRE_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_expire" value="1" id="cookie_expire"<!-- IF COOKIE_POLICY_EXPIRE --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_expire" value="0" <!-- IF not COOKIE_POLICY_EXPIRE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_policy_retain">{L_COOKIE_RETAIN}{L_COLON}</label><br /><span>{L_COOKIE_RETAIN_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_policy_retain" value="1" id="cookie_policy_retain"<!-- IF COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_policy_retain" value="0" <!-- IF not COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_log_errors">{L_COOKIE_LOG_ERRORS}{L_COLON}</label><br /><span>{L_COOKIE_LOG_ERRORS_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_log_errors" value="1" id="cookie_log_errors"<!-- IF COOKIE_POLICY_LOG_ERRORS --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_log_errors" value="0" <!-- IF not COOKIE_POLICY_LOG_ERRORS --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

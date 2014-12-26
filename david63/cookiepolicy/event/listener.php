@@ -22,9 +22,6 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\config\config */
 	protected $config;
 
-	/** @var \phpbb\request\request */
-	protected $request;
-
 	/** @var \phpbb\template\twig\twig */
 	protected $template;
 
@@ -38,16 +35,14 @@ class listener implements EventSubscriberInterface
 	* Constructor for listener
 	*
 	* @param \phpbb\config\config		$config		Config object
-	* @param \phpbb\request\request		$request	Request object
 	* @param \phpbb\template\twig\twig	$template	Template object
 	* @param \phpbb\user                $user		User object
 	* @return \david63\cookiepolicy\event\listener
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\request\request $request, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\controller\helper $helper)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\controller\helper $helper)
 	{
 		$this->config	= $config;
-		$this->request	= $request;
 		$this->template	= $template;
 		$this->user		= $user;
 		$this->helper	= $helper;
@@ -66,45 +61,7 @@ class listener implements EventSubscriberInterface
 			'core.user_setup'					=> 'load_language_on_setup',
 			'core.page_header'					=> 'page_header',
 			'core.page_footer'					=> 'page_footer',
-			'core.acp_board_config_edit_add'	=> 'acp_board_settings',
 		);
-	}
-
-	/**
-	* Set ACP board settings
-	*
-	* @param object $event The event object
-	* @return null
-	* @access public
-	*/
-	public function acp_board_settings($event)
-	{
-	    if ($event['mode'] == 'cookie')
-        {
-			$display_vars = $event['display_vars'];
-
-			$cookie_config_vars = array(
-				'legend10'				=> 'COOKIE_POLICY',
-                'cookie_policy_enabled'	=> array('lang' => 'COOKIE_POLICY', 'validate' => 'bool', 'type' => 'radio:enabled_disabled', 'explain' => true),
-                'cookie_eu_detect'		=> array('lang' => 'COOKIE_DETECT', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-				'cookie_not_eu_detect'	=> array('lang' => 'COOKIE_UN_DETECT', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-				'cookie_expire'			=> array('lang' => 'COOKIE_EXPIRE', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-				'cookie_policy_retain'	=> array('lang' => 'COOKIE_RETAIN', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-				'cookie_log_errors'		=> array('lang' => 'COOKIE_LOG_ERRORS', 'validate' => 'bool', 'type' => 'radio:yes_no', 'explain' => true),
-				'legend20'				=> 'ACP_SUBMIT_CHANGES',
-			);
-
-			$insert_after	= 'legend1';
-			$position		= array_search($insert_after, array_keys($display_vars['vars'])) + 25; // Set to 25 to allow for other options being added
-
-			$display_vars['vars'] = array_merge(
-				array_slice($display_vars['vars'], 0, $position),
-				$cookie_config_vars,
-                array_slice($display_vars['vars'], $position)
-            );
-
-            $event['display_vars'] = $display_vars;
-		}
 	}
 
 	/**
@@ -170,10 +127,10 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'COOKIE_ENABLED'		=> $cookie_enabled,
 			'COOKIE_EXPIRES'		=> $this->config['cookie_expire'],
-			'COOKIE_NAME'			=> $this->config['cookie_name'],
-			'SHOW_COOKIE_ACCEPT'	=> isset($_COOKIE[$this->config['cookie_name'] . '_ca']) ? false : true,
-			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
 			'COOKIE_EXPLAIN_TEXT'	=> sprintf($this->user->lang['COOKIE_TEXT'], $this->config['sitename']),
+			'COOKIE_NAME'			=> $this->config['cookie_name'],
+			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
+			'SHOW_COOKIE_ACCEPT'	=> isset($_COOKIE[$this->config['cookie_name'] . '_ca']) ? false : true,
 			'SITE'					=> $this->config['sitename'],
 		));
 	}
@@ -181,7 +138,8 @@ class listener implements EventSubscriberInterface
 	public function page_footer($event)
 	{
 		$this->template->assign_vars(array(
-			'U_COOKIE_PAGE'	=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
+			'COOKIE_ON_INDEX'	=> $this->config['cookie_on_index'],
+			'U_COOKIE_PAGE'		=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
 		));
 	}
 }

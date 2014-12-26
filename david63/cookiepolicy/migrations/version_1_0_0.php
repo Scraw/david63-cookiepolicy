@@ -16,11 +16,22 @@ class version_1_0_0 extends \phpbb\db\migration\migration
 		return array(
 			array('config.add', array('cookie_eu_detect', '0')),
 			array('config.add', array('cookie_expire', '0')),
-			array('config.add', array('cookie_log_errors', '0')),
+			array('config.add', array('cookie_log_errors', '1')),
 			array('config.add', array('cookie_not_eu_detect', '0')),
+			array('config.add', array('cookie_on_index', '1')),
 			array('config.add', array('cookie_policy_enabled', '0')),
-			array('config.add', array('cookie_policy_retain', '0')),
+			array('config.add', array('cookie_policy_retain', '1')),
 			array('config.add', array('version_cookiepolicy', '1.0.0')),
+
+			// Add the ACP module
+			array('module.add', array('acp', 'ACP_CAT_DOT_MODS', 'COOKIE_POLICY')),
+
+			array('module.add', array(
+				'acp', 'COOKIE_POLICY', array(
+					'module_basename'	=> '\david63\cookiepolicy\acp\cookiepolicy_module',
+					'modes'				=> array('manage'),
+				),
+			)),
 		);
 	}
 }

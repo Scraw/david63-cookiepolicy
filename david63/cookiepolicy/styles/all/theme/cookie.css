@@ -14,10 +14,11 @@
     padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-	color: #FFFF33;
-    background-color: #163B60;
+	color: #DBDB00;
+    background-color: #00608F;
     display: none;
 	float:right;
+	font-weight: bold
 }
 
  .cookie-box a {

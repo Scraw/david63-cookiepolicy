@@ -3,7 +3,6 @@ services:
         class: david63\cookiepolicy\event\listener
         arguments:
             - @config
-            - @request
             - @template
             - @user
             - @controller.helper
