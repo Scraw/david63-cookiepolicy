@@ -4,7 +4,7 @@
     	var cookieAccept	= getCookie(cookieName);
 
     	if (cookieAccept != true) {
-			$(".cookieAcceptBox").addClass('cookie-box');
+			$(".cookieAcceptBox").addClass(cookieClass);
         	$(".cookieAcceptBox").html(cookieText + '<a href="#">' + acceptText + '</a>');
         	$(".cookieAcceptBox").fadeIn(300);
         	$(".cookieAcceptBox a").click(function ()

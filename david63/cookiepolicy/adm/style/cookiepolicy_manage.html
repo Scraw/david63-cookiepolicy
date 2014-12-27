@@ -15,6 +15,12 @@
 		</dl>
 
 		<dl>
+			<dt><label for="cookie_box_position">{L_COOKIE_BOX_POSITION}{L_COLON}</label><br /><span>{L_COOKIE_BOX_POSITION_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_box_position" value="0" id="cookie_box_position"<!-- IF not COOKIE_BOX_POSITION --> checked="checked"<!-- ENDIF -->/> {L_COOKIE_LEFT}</label>
+				<label><input type="radio" class="radio" name="cookie_box_position" value="1" <!-- IF COOKIE_BOX_POSITION --> checked="checked"<!-- ENDIF --> /> {L_COOKIE_RIGHT}</label></dd>
+		</dl>
+
+		<dl>
 			<dt><label for="cookie_eu_detect">{L_COOKIE_DETECT}{L_COLON}</label><br /><span>{L_COOKIE_DETECT_EXPLAIN}</span></dt>
 			<dd><label><input type="radio" class="radio" name="cookie_eu_detect" value="1" id="cookie_eu_detect"<!-- IF COOKIE_POLICY_EU_DETECT --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
 				<label><input type="radio" class="radio" name="cookie_eu_detect" value="0" <!-- IF not COOKIE_POLICY_EU_DETECT --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
@@ -42,6 +48,12 @@
 			<dt><label for="cookie_policy_retain">{L_COOKIE_RETAIN}{L_COLON}</label><br /><span>{L_COOKIE_RETAIN_EXPLAIN}</span></dt>
 			<dd><label><input type="radio" class="radio" name="cookie_policy_retain" value="1" id="cookie_policy_retain"<!-- IF COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
 				<label><input type="radio" class="radio" name="cookie_policy_retain" value="0" <!-- IF not COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+
+		<dl>
+			<dt><label for="cookie_show_policy">{L_COOKIE_SHOW_POLICY}{L_COLON}</label><br /><span>{L_COOKIE_SHOW_POLICY_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="cookie_show_policy" value="1" id="cookie_show_policy"<!-- IF COOKIE_SHOW_POLICY --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="cookie_show_policy" value="0" <!-- IF not COOKIE_SHOW_POLICY --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
 		</dl>
 
 		<dl>

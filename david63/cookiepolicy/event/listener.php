@@ -125,6 +125,7 @@ class listener implements EventSubscriberInterface
 		}
 
 		$this->template->assign_vars(array(
+			'COOKIE_CLASS'			=> $this->config['cookie_box_position'] ? 'cookie-box rightside' : 'cookie-box leftside',
 			'COOKIE_ENABLED'		=> $cookie_enabled,
 			'COOKIE_EXPIRES'		=> $this->config['cookie_expire'],
 			'COOKIE_EXPLAIN_TEXT'	=> sprintf($this->user->lang['COOKIE_TEXT'], $this->config['sitename']),
@@ -138,8 +139,9 @@ class listener implements EventSubscriberInterface
 	public function page_footer($event)
 	{
 		$this->template->assign_vars(array(
-			'COOKIE_ON_INDEX'	=> $this->config['cookie_on_index'],
-			'U_COOKIE_PAGE'		=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
+			'COOKIE_ON_INDEX'		=> $this->config['cookie_on_index'],
+			'COOKIE_SHOW_POLICY'	=> $this->config['cookie_show_policy'],
+			'U_COOKIE_PAGE'			=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
 		));
 	}
 }
