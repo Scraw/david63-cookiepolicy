@@ -54,8 +54,8 @@ Certain cookies contain personal information – for example, if you click on "r
 <p><b>3. Functionality Cookies</b><BR />These cookies remember choices you make to improve your experience. </p>
 <p>%1$s may also allow third parties to serve cookies that fall into any of the categories above. For example, like many sites, we may use Google Analytics to help us monitor our website traffic.</p>
 <h3>Can a forum user block cookies?</h3><p>To find out how to manage which cookies you allow, see your browser’s help section or your mobile device manual - or you can visit one of the sites below, which have detailed information on how to manage, control or delete cookies<br /><br />
-<a href="http://www.aboutcookies.org" style="text-decoration:none">www.aboutcookies.org</a></a><br />
-<a href="http://www.allaboutcookies.org" style="text-decoration:none">www.allaboutcookies.org</a></a></p>
+<a href="http://www.aboutcookies.org" style="text-decoration:none">www.aboutcookies.org</a><br />
+<a href="http://www.allaboutcookies.org" style="text-decoration:none">www.allaboutcookies.org</a></p>
 <p>Please remember that if you do choose to disable cookies, you may find that certain sections of %1$s do not work properly.</p>
 <h3>Cookies on %1$s from social networking sites</h3><p>%1$s may have links to social networking websites (e.g. Facebook, Twitter or You Tube). These websites may also place cookies on your device and %1$s does not control how they use their cookies, therefore %1$s suggests you check their website(s) to see how they are using cookies.',
 

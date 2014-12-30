@@ -33,6 +33,7 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
+	'All'								=> 'All',
 	'COOKIE_BOX_POSITION'				=> 'Cookie box position',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position the cookie acceptance box on the left or right.',
 	'COOKIE_DETECT'						=> 'Detect if cookie is required',
