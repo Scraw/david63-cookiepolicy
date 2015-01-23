@@ -42,10 +42,10 @@ class listener implements EventSubscriberInterface
 	*/
 	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\controller\helper $helper)
 	{
-		$this->config	= $config;
-		$this->template	= $template;
-		$this->user		= $user;
-		$this->helper	= $helper;
+		$this->config		= $config;
+		$this->template		= $template;
+		$this->user			= $user;
+		$this->helper		= $helper;
 	}
 
 	/**
@@ -58,9 +58,9 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.user_setup'					=> 'load_language_on_setup',
-			'core.page_header'					=> 'page_header',
-			'core.page_footer'					=> 'page_footer',
+			'core.user_setup'	=> 'load_language_on_setup',
+			'core.page_header'	=> 'page_header',
+			'core.page_footer'	=> 'page_footer',
 		);
 	}
 
@@ -115,12 +115,12 @@ class listener implements EventSubscriberInterface
 				}
 				else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
 				{
-					$phpbb_log->add('admin', 'LOG_COOKIE_ERROR', $this->user->data['user_id']);
+					$this->phpbb_log->add('admin', 'LOG_COOKIE_ERROR', $this->user->data['user_id']);
 				}
 			}
 			else
 			{
-				$phpbb_log->add('admin', 'LOG_SERVER_ERROR', $this->user->data['user_id']);
+				$this->phpbb_log->add('admin', 'LOG_SERVER_ERROR', $this->user->data['user_id']);
 			}
 		}
 

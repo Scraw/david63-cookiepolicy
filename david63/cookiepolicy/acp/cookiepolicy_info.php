@@ -15,9 +15,10 @@ class cookiepolicy_info
 	{
 		return array(
 			'filename'	=> '\david63\cookiepolicy\acp\cookiepolicy_module',
-			'title'		=> 'SITE_LOGO_MANAGE',
+			'title'		=> 'COOKIE_POLICY',
 			'modes'		=> array(
 				'manage'	=> array('title' => 'COOKIE_POLICY_MANAGE', 'auth' => 'ext_david63/cookiepolicy && acl_a_board', 'cat' => array('COOKIE_POLICY')),
+				'edit'		=> array('title' => 'COOKIE_POLICY_EDIT', 'auth' => 'ext_david63/cookiepolicy && acl_a_board', 'cat' => array('COOKIE_POLICY')),
 			),
 		);
 	}
