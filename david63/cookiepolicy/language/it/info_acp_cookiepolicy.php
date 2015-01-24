@@ -33,7 +33,7 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'All'								=> 'Tutte',
+	'ALL'								=> 'Tutte',
 	'COOKIE_BOX_POSITION'				=> 'Posizione del box',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Posizionare il box dei cookies a sinistra o a destra.',
 	'COOKIE_DETECT'						=> 'Controllare se i cookies sono richiesti',
@@ -60,5 +60,3 @@ $lang = array_merge($lang, array(
 	'COOKIE_UN_DETECT'					=> 'Controllare se i cookies non sono richiesti',
 	'COOKIE_UN_DETECT_EXPLAIN'			=> 'Si tenterà di rilevare se l\'utente <strong>non appartiene</strong> ad uno stato EU e, pertanto, non è tenuto ad accettare la politica sui cookies.<br /><strong>Nota 1:</strong> Questo controllo potrebbe non essere preciso ma ne è consigliato l\'utilizzo sui forum dove esiste la possibilità che alcuni utenti appartengano ad uno stato EU.<br /><strong>Nota 2:</strong> Questa opzione sarà effettiva solo se <strong>Abilita cookies</strong> è abilitata.',
 ));
-
-?>

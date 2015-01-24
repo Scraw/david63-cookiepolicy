@@ -28,7 +28,10 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\user */
 	protected $user;
 
-	/* @var \phpbb\controller\helper */
+	/** @var \phpbb\log */
+	protected $log;
+
+	/** @var \phpbb\controller\helper */
 	protected $helper;
 
 	/**
@@ -37,15 +40,19 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\config\config		$config		Config object
 	* @param \phpbb\template\twig\twig	$template	Template object
 	* @param \phpbb\user                $user		User object
+	* @param \phpbb\log\log				$log		phpBB log
+	* @param \phpbb\controller\helper	$helper		Helper object
 	* @return \david63\cookiepolicy\event\listener
+	*
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\controller\helper $helper)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\controller\helper $helper)
 	{
-		$this->config		= $config;
-		$this->template		= $template;
-		$this->user			= $user;
-		$this->helper		= $helper;
+		$this->config	= $config;
+		$this->template	= $template;
+		$this->user		= $user;
+		$this->log		= $log;
+		$this->helper	= $helper;
 	}
 
 	/**
@@ -94,13 +101,13 @@ class listener implements EventSubscriberInterface
 
 		if (($this->config['cookie_policy_enabled'] == false && $this->config['cookie_eu_detect'] == true) || ($this->config['cookie_policy_enabled'] == true && $this->config['cookie_not_eu_detect'] == true))
 		{
-			// Setting this to true here means that if there is a problem with the IP lookup
-			// then the cookie will be enabled - just in case we have got it wrong!
+			// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
 			$cookie_enabled = true;
 
 			// Check that the server is available
 			$server_ok = false;
 			$server_ok = @fsockopen('www.ip-api.com', 80);
+
 			if ($server_ok)
 			{
 				$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
@@ -115,12 +122,12 @@ class listener implements EventSubscriberInterface
 				}
 				else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
 				{
-					$this->phpbb_log->add('admin', 'LOG_COOKIE_ERROR', $this->user->data['user_id']);
+					$this->log->add('admin', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
 				}
 			}
 			else
 			{
-				$this->phpbb_log->add('admin', 'LOG_SERVER_ERROR', $this->user->data['user_id']);
+				$this->log->add('admin', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
 			}
 		}
 
@@ -128,7 +135,7 @@ class listener implements EventSubscriberInterface
 			'COOKIE_CLASS'			=> $this->config['cookie_box_position'] ? 'cookie-box rightside' : 'cookie-box leftside',
 			'COOKIE_ENABLED'		=> $cookie_enabled,
 			'COOKIE_EXPIRES'		=> $this->config['cookie_expire'],
-			'COOKIE_EXPLAIN_TEXT'	=> sprintf($this->user->lang['COOKIE_TEXT'], $this->config['sitename']),
+			'COOKIE_EXPLAIN_TEXT'	=> sprintf($this->user->lang('COOKIE_TEXT', $this->config['sitename'])),
 			'COOKIE_NAME'			=> $this->config['cookie_name'],
 			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
 			'SHOW_COOKIE_ACCEPT'	=> isset($_COOKIE[$this->config['cookie_name'] . '_ca']) ? false : true,
@@ -141,6 +148,7 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'COOKIE_ON_INDEX'		=> $this->config['cookie_on_index'],
 			'COOKIE_SHOW_POLICY'	=> $this->config['cookie_show_policy'],
+
 			'U_COOKIE_PAGE'			=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
 		));
 	}

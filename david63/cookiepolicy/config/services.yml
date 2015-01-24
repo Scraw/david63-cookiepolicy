@@ -5,6 +5,7 @@ services:
             - @config
             - @template
             - @user
+            - @log
             - @controller.helper
         tags:
             - { name: event.listener }

@@ -37,20 +37,18 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-
-
 	'COOKIE_ACCEPT_TEXT'	=> 'This forum uses cookies to give you the best and most relevant experience. By using this forum this means that you accept this policy.<br /><br />You can find out more about the cookies used by clicking the "Cookie policy" on the main page.<br /><br />',
 	'COOKIE_ACCEPT'			=> '[ I accept ]',
 
 	'COOKIE_TEXT'			=> '<h3>How do we use cookies on this forum?</h3>
 
 	<p>We use files known as cookies on %1$s to improve its performance and to enhance your user experience. By using %1$s you agree that we can place these types of files on your device.</p>
-<h3>What are cookies?</h3><p>Cookies are small text files that a website may put on your computer, or mobile device, when you first visit that site or one of it\'s pages.<br /><br />
+<h3>What are cookies?</h3><p>Cookies are small text files that a website may put on your computer, or mobile device, when you first visit that site or one of its pages.<br /><br />
 There are many functions that a cookie can serve. For example, a cookie will help the website, or another website, to recognise your device the next time you visit it. %1$s uses the term "cookies" in this policy to refer to all files that collect information in this way.<br /><br />
-Certain cookies contain personal information – for example, if you click on "remember me" when logging on, a cookie will store your username. Most cookies will not collect information that identifies you, but will instead collect more general information such as how users arrive at and use %1$s, or a user\'s general location.</p>
+Certain cookies contain personal information – for example, if you click on "remember me" when logging on, a cookie will store your username. Most cookies will not collect information that identifies you, but will instead collect more general information such as how users arrive at and use %1$s, or a user’s general location.</p>
 <h3>What sort of cookies does %1$s use?</h3><p>Cookies can perform several different functions:</P>
 <p><b>1. Necessary Cookies</b><br />Some cookies are essential for the operation of %1$s. These cookies enable services you have specifically asked for.</p>
-<p><b>2. Performance Cookies</b><br />These cookies may collect anonymous information on the pages visited. For example, we might use performance cookies to keep track of which pages are most popular, which method of linking between pages is most effective, and to determine why some pages are receiving error messages. </p>
+<p><b>2. Performance Cookies</b><br />These cookies may collect anonymous information on the pages visited. For example, we might use performance cookies to keep track of which pages are most popular, which method of linking between pages is most effective and to determine why some pages are receiving error messages. </p>
 <p><b>3. Functionality Cookies</b><BR />These cookies remember choices you make to improve your experience. </p>
 <p>%1$s may also allow third parties to serve cookies that fall into any of the categories above. For example, like many sites, we may use Google Analytics to help us monitor our website traffic.</p>
 <h3>Can a forum user block cookies?</h3><p>To find out how to manage which cookies you allow, see your browser’s help section or your mobile device manual - or you can visit one of the sites below, which have detailed information on how to manage, control or delete cookies<br /><br />
@@ -63,5 +61,3 @@ Certain cookies contain personal information – for example, if you click on "r
 	'LOG_COOKIE_ERROR'		=> '<strong>Failed IP lookup</stong>',
 	'LOG_SERVER_ERROR'		=> '<strong>Could not connect to IP server</strong>',
 ));
-
-?>

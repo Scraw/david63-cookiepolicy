@@ -20,7 +20,7 @@ if (empty($lang) || !is_array($lang))
 	$lang = array();
 }
 
-// DEVELOPERS PLEASE NOTE
+/// DEVELOPERS PLEASE NOTE
 //
 // All language files should use UTF-8 as their encoding and the files must not contain a BOM.
 //
@@ -31,9 +31,13 @@ if (empty($lang) || !is_array($lang))
 // You do not need this where single placeholders are used, e.g. 'Message %d' is fine
 // equally where a string contains only two placeholders which are used to wrap text
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
+//
+// Some characters you may want to copy&paste:
+// ’ » “ ” …
+//
 
 $lang = array_merge($lang, array(
-	'All'								=> 'All',
+	'ALL'								=> 'All',
 
 	'COOKIE_BOX_POSITION'				=> 'Cookie box position',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position the cookie acceptance box on the left or right.',
@@ -50,7 +54,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_LOG_ERRORS_EXPLAIN'			=> 'Log any errors that are detected when looking up the user’s IP address.',
 
 	'COOKIE_POLICY'						=> 'Cookie policy',
-	'COOKIE_POLICY_EDIT'				=> 'Edit Cookie Policy',
 	'COOKIE_POLICY_ENABLE'				=> 'Cookie policy enable',
 	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Enable/disable all user’s reqirement to accept the use of cookies, under EU Cookie directive (2012), on this board.',
 	'COOKIE_POLICY_EXPLAIN'				=> 'Set the options to manage the Cookie Policy.',
@@ -70,5 +73,3 @@ $lang = array_merge($lang, array(
 	'COOKIE_UN_DETECT'					=> 'Detect if cookie is not required',
 	'COOKIE_UN_DETECT_EXPLAIN'			=> 'This will try to detect if the user is <strong>not</strong> in an EU state and therefore not be required to accept the cookie policy.<br /><strong>Note 1:</strong> This may not be accurate but could be useful for boards where there is a possibility that some users may be from an EU state.<br /><strong>Note 2:</strong> This option will only be effective if Cookie policy is enabled.',
 ));
-
-?>

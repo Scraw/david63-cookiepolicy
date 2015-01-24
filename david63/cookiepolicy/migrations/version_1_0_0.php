@@ -31,7 +31,7 @@ class version_1_0_0 extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'acp', 'COOKIE_POLICY', array(
 					'module_basename'	=> '\david63\cookiepolicy\acp\cookiepolicy_module',
-					'modes'				=> array('manage', 'edit'),
+					'modes'				=> array('main'),
 				),
 			)),
 		);

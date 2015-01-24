@@ -26,6 +26,7 @@ class main
 	/**
 	* Constructor
 	*
+	* @param \phpbb\config\config		$config
 	* @param \phpbb\controller\helper	$helper
 	* @param \phpbb\template\template	$template
 	* @param \phpbb\user				$user
@@ -39,7 +40,7 @@ class main
 	}
 
 	/**
-	* Demo controller for route /cookiepolicy/{name}
+	* Controller for route /cookiepolicy/{name}
 	*
 	* @param string		$name
 	* @return \Symfony\Component\HttpFoundation\Response A Symfony Response object

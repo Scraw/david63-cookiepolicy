@@ -63,5 +63,3 @@ Alcuni cookies contengono informazioni personali - ad esempio, se fai click su "
 	'LOG_COOKIE_ERROR'		=> '<strong>Ricerca IP non riuscita</stong>',
 	'LOG_SERVER_ERROR'		=> '<strong>Impossibile connettersi al server IP</strong>',
 ));
-
-?>
