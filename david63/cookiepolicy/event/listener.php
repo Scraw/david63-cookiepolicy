@@ -122,12 +122,12 @@ class listener implements EventSubscriberInterface
 				}
 				else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
 				{
-					$this->log->add('admin', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
+					$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
 				}
 			}
 			else
 			{
-				$this->log->add('admin', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
+				$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
 			}
 		}
 
