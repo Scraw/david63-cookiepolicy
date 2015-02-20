@@ -51,7 +51,7 @@ Certain cookies contain personal information – for example, if you click on "r
 <p><b>2. Performance Cookies</b><br />These cookies may collect anonymous information on the pages visited. For example, we might use performance cookies to keep track of which pages are most popular, which method of linking between pages is most effective and to determine why some pages are receiving error messages.</p>
 <p><b>3. Functionality Cookies</b><BR />These cookies remember choices you make to improve your experience.</p>
 <p>%1$s may also allow third parties to serve cookies that fall into any of the categories above. For example, like many sites, we may use Google Analytics to help us monitor our website traffic.</p>
-<h3>Can a forum user block cookies?</h3><p>To find out how to manage which cookies you allow, see your browser’s help section or your mobile device manual - or you can visit one of the sites below, which have detailed information on how to manage, control or delete cookies<br /><br />
+<h3>Can a forum user block cookies?</h3><p>To find out how to manage which cookies you allow, see your browser’s help section or your mobile device manual - or you can visit one of the sites below, which have detailed information on how to manage, control or delete cookies.<br /><br />
 <a href="http://www.aboutcookies.org" style="text-decoration:none">www.aboutcookies.org</a><br />
 <a href="http://www.allaboutcookies.org" style="text-decoration:none">www.allaboutcookies.org</a></p>
 <p>Please remember that if you do choose to disable cookies, you may find that certain sections of %1$s do not work properly.</p>
