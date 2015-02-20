@@ -56,7 +56,7 @@ Certains cookies contiennent des informations personnelles – par exemple, si v
 <a href="http://www.aboutcookies.org" style="text-decoration:none">www.aboutcookies.org</a><br />
 <a href="http://www.allaboutcookies.org" style="text-decoration:none">www.allaboutcookies.org</a></p>
 <p>Veuillez vous rappeler que si vous choisissez de désactiver les cookies, vous pourrez constater que certaines sections de %1$s ne fonctionneront pas correctement.</p>
-<h3>Les cookies sur %1$s provenant des sites des réseaux sociaux</h3><p>%1$s peuvent avoir des liens vers des sites de réseaux sociaux (exemple Facebook, Twitter ou YouTube). Ces sites peuvent également placer des cookies sur votre appareil et %1$s ne gère pas la façon dont ils utilisent leurs cookies, donc %1$s vous suggère de vérifier leurs sites pour voir comment ils utilisent les cookies.',
+<h3>Les cookies sur %1$s provenant des sites des réseaux sociaux</h3><p>%1$s peut avoir des liens vers des sites de réseaux sociaux (exemple Facebook, Twitter ou YouTube). Ces sites peuvent également placer des cookies sur votre appareil et %1$s ne gère pas la façon dont ils utilisent leurs cookies, donc %1$s vous suggère de vérifier leurs sites pour voir comment ils utilisent les cookies.',
 
 	'COOKIE_POLICY'			=> 'Politique des cookies',
 	'LOG_COOKIE_ERROR'		=> '<strong>Échec de la recherche d’IP</stong>',
