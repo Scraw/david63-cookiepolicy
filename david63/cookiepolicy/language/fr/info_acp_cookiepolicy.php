@@ -38,7 +38,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ALL'								=> 'All',
+	'ALL'								=> 'Tous',
 
 	'COOKIE_BOX_POSITION'				=> 'Position de la boite des cookies',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position de la boite d’acceptation des cookies sur la gauche ou la droite.',
