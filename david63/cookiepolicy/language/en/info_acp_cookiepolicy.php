@@ -55,9 +55,9 @@ $lang = array_merge($lang, array(
 
 	'COOKIE_POLICY'						=> 'Cookie policy',
 	'COOKIE_POLICY_ENABLE'				=> 'Cookie policy enable',
-	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Enable/disable all user’s reqirement to accept the use of cookies, under EU Cookie directive (2012), on this board.',
+	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Enable/disable all user’s requirement to accept the use of cookies, under EU Cookie directive (2012), on this board.',
 	'COOKIE_POLICY_EXPLAIN'				=> 'Set the options to manage the Cookie Policy.',
-	'COOKIE_POLICY_LOG'					=> '<strong>Cookie policy settings updated </strong>',
+	'COOKIE_POLICY_LOG'					=> '<strong>Cookie policy settings updated</strong>',
 	'COOKIE_POLICY_MANAGE'				=> 'Manage settings',
 	'COOKIE_POLICY_ON_INDEX'			=> 'Show on index only',
 	'COOKIE_POLICY_ON_INDEX_EXPLAIN'	=> 'Show the cookie policy acceptance box on all pages or only on the index page.',
