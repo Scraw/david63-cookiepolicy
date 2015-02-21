@@ -47,7 +47,7 @@ class main
 	*/
 	public function display($name)
 	{
-		$this->template->assign_var('COOKIE_MESSAGE', sprintf($this->user->lang('COOKIE_TEXT', $this->config['sitename'])));
+		$this->template->assign_var('COOKIE_MESSAGE', $this->user->lang('COOKIE_TEXT', $this->config['sitename']));
 
 		return $this->helper->render('cookie_body.html', $name);
 	}

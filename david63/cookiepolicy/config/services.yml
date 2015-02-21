@@ -7,6 +7,7 @@ services:
             - @user
             - @log
             - @controller.helper
+            - @request
         tags:
             - { name: event.listener }
 
@@ -17,3 +18,4 @@ services:
             - @template
             - @user
             - @config
+			

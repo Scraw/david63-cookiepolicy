@@ -34,6 +34,9 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\controller\helper */
 	protected $helper;
 
+	/** @var \phpbb\request\request */
+	protected $request;
+
 	/**
 	* Constructor for listener
 	*
@@ -42,17 +45,19 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\user                $user		User object
 	* @param \phpbb\log\log				$log		phpBB log
 	* @param \phpbb\controller\helper	$helper		Helper object
+	* @param \phpbb\request\request		$request	Request object
 	* @return \david63\cookiepolicy\event\listener
 	*
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\controller\helper $helper)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\controller\helper $helper, \phpbb\request\request $request)
 	{
 		$this->config	= $config;
 		$this->template	= $template;
 		$this->user		= $user;
 		$this->log		= $log;
 		$this->helper	= $helper;
+		$this->request	= $request;
 	}
 
 	/**
@@ -99,47 +104,51 @@ class listener implements EventSubscriberInterface
 	{
 		$cookie_enabled = $this->config['cookie_policy_enabled'];
 
-		if (($this->config['cookie_policy_enabled'] == false && $this->config['cookie_eu_detect'] == true) || ($this->config['cookie_policy_enabled'] == true && $this->config['cookie_not_eu_detect'] == true))
+		// If we have already set the cookie on this device then there is no need to process
+		$cookie_set = $this->request->is_set($this->config['cookie_name'] . '_ca', \phpbb\request\request_interface::COOKIE) ? true : false;
+		if ($this->config['cookie_policy_enabled'] && !$cookie_set)
 		{
-			// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
-			$cookie_enabled = true;
-
-			// Check that the server is available
-			$server_ok = false;
-			$server_ok = @fsockopen('www.ip-api.com', 80);
-
-			if ($server_ok)
+			// Only need to do this if we are trying to detect if cookie required
+			if (($this->config['cookie_eu_detect']) || $this->config['cookie_not_eu_detect'])
 			{
+				// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
+				$cookie_enabled = true;
+
 				$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
 
-				$ip_query = file_get_contents('http://ip-api.com/json/' . $this->user->data['session_ip'] . '?fields=status,countryCode');
-				$ip_array = json_decode($ip_query, true);
+				$context	= stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
+				$ip_query	= @file_get_contents('http://ip-api.com/json/' . $this->user->data['session_ip'] . '?fields=status,countryCode', false, $context);
+				if($ip_query === false)
+				{
+					$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
+				}
+				else
+				{
+					$ip_array = json_decode($ip_query, true);
 
-				if ($ip_array['status'] == 'success' && !in_array($ip_array['countryCode'], $eu_array))
-				{
-					// IP not in an EU country therefore we do not need to invoke the Cookie Policy
-					$cookie_enabled = false;
-				}
-				else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
-				{
-					$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
+					if ($ip_array['status'] == 'success' && !in_array($ip_array['countryCode'], $eu_array))
+					{
+						// IP not in an EU country therefore we do not need to invoke the Cookie Policy
+						$cookie_enabled = false;
+					}
+					else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
+					{
+						$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
+					}
 				}
 			}
-			else
-			{
-				$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
-			}
+
+			$this->template->assign_vars(array(
+				'COOKIE_CLASS'		=> $this->config['cookie_box_position'] ? addslashes('cookie-box rightside') : addslashes('cookie-box leftside'),
+				'COOKIE_EXPIRES'	=> addslashes($this->config['cookie_expire']),
+				'COOKIE_NAME'		=> addslashes($this->config['cookie_name']),
+			));
 		}
 
 		$this->template->assign_vars(array(
-			'COOKIE_CLASS'			=> $this->config['cookie_box_position'] ? 'cookie-box rightside' : 'cookie-box leftside',
 			'COOKIE_ENABLED'		=> $cookie_enabled,
-			'COOKIE_EXPIRES'		=> $this->config['cookie_expire'],
-			'COOKIE_EXPLAIN_TEXT'	=> sprintf($this->user->lang('COOKIE_TEXT', $this->config['sitename'])),
-			'COOKIE_NAME'			=> $this->config['cookie_name'],
 			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
-			'SHOW_COOKIE_ACCEPT'	=> isset($_COOKIE[$this->config['cookie_name'] . '_ca']) ? false : true,
-			'SITE'					=> $this->config['sitename'],
+			'SHOW_COOKIE_ACCEPT'	=> $cookie_set,
 		));
 	}
 

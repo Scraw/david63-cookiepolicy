@@ -56,7 +56,7 @@ $lang = array_merge($lang, array(
 
 	'COOKIE_POLICY'						=> 'Politique des cookies',
 	'COOKIE_POLICY_ENABLE'				=> 'Activer la politique des cookies',
-	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Active / désactive sur le forum la condition requise d’accepter les cookies pour tous les utilisateurs étant concernés par la directive EU Cookie (2012).',
+	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Active/désactive sur le forum la condition requise d’accepter les cookies pour tous les utilisateurs étant concernés par la directive EU Cookie (2012).',
 	'COOKIE_POLICY_EXPLAIN'				=> 'Définir les options pour gérer la politique des cookies.',
 	'COOKIE_POLICY_LOG'					=> '<strong>Les paramètres de la politique des cookies ont été mise à jour</strong>',
 	'COOKIE_POLICY_MANAGE'				=> 'Gestion des paramètres',
