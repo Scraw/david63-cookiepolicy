@@ -43,7 +43,7 @@ $lang = array_merge($lang, array(
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position the cookie acceptance box on the left or right.',
 
 	'COOKIE_DETECT'						=> 'Detect if cookie is required',
-	'COOKIE_DETECT_EXPLAIN'				=> 'This will try to detect if the user <strong>is in</strong> an EU state and will only require cookie acceptance for these users.<br /><strong>Note 1:</strong> This may not be accurate and it is not recommended for boards where the majority of users are expected to be from the EU.<br /><strong>Note 2:</strong> This option will only be effective if Cookie policy is disabled.',
+	'COOKIE_DETECT_EXPLAIN'				=> 'This will try to detect if the user <strong>is in</strong> an EU state and will only require cookie acceptance for these users.<br /><strong>Note:</strong> This may not be accurate and it is not recommended for boards where the majority of users are expected to be from the EU.',
 
 	'COOKIE_EXPIRE'						=> 'Cookie expires',
 	'COOKIE_EXPIRE_EXPLAIN'				=> 'Setting this to yes will require the user to re accept the Cookie Policy annually.',
@@ -71,5 +71,8 @@ $lang = array_merge($lang, array(
 	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Setting this to yes will display the nav bar link to the cookie policy when the Cookie Policy is disabled, i.e. you can have a cookie policy without the need to have the acceptance box.',
 
 	'COOKIE_UN_DETECT'					=> 'Detect if cookie is not required',
-	'COOKIE_UN_DETECT_EXPLAIN'			=> 'This will try to detect if the user is <strong>not</strong> in an EU state and therefore not be required to accept the cookie policy.<br /><strong>Note 1:</strong> This may not be accurate but could be useful for boards where there is a possibility that some users may be from an EU state.<br /><strong>Note 2:</strong> This option will only be effective if Cookie policy is enabled.',
+	'COOKIE_UN_DETECT_EXPLAIN'			=> 'This will try to detect if the user is <strong>not</strong> in an EU state and therefore not be required to accept the cookie policy.<br /><strong>Note:</strong> This may not be accurate but could be useful for boards where there is a possibility that some users may be from an EU state.',
+
+	'LOG_COOKIE_ERROR'					=> '<strong>Failed IP lookup</stong>',
+	'LOG_SERVER_ERROR'					=> '<strong>Could not connect to IP server</strong>',
 ));

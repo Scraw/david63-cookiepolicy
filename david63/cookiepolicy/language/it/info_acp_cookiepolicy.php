@@ -37,7 +37,7 @@ $lang = array_merge($lang, array(
 	'COOKIE_BOX_POSITION'				=> 'Posizione del box',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Posizionare il box dei cookies a sinistra o a destra.',
 	'COOKIE_DETECT'						=> 'Controllare se i cookies sono richiesti',
-	'COOKIE_DETECT_EXPLAIN'				=> 'Si tenterà di rilevare se l’utente <strong>appartiene</strong> ad uno stato dell’Unione Europea e se è richiesta l’accettazione dei cookies.<br /><strong>Nota 1:</strong> Questo controllo potrebbe non essere preciso e ne è sconsigliato l’utilizzo sui forum in cui la maggior parte degli utenti potrebbe appartenere all’UE.<br /><strong>Nota 2:</strong> Questa opzione sarà effettiva solo se <strong>Abilita cookies</strong> è disabilitata.',
+	'COOKIE_DETECT_EXPLAIN'				=> 'Si tenterà di rilevare se l’utente <strong>appartiene</strong> ad uno stato dell’Unione Europea e se è richiesta l’accettazione dei cookies.<br /><strong>Nota:</strong> Questo controllo potrebbe non essere preciso e ne è sconsigliato l’utilizzo sui forum in cui la maggior parte degli utenti potrebbe appartenere all’UE.',
 	'COOKIE_EXPIRE'						=> 'Scadenza dei cookies',
 	'COOKIE_EXPIRE_EXPLAIN'				=> 'Se impostato su <strong>Si</strong>, verrà chiesto all’utente di riaccettare la politica sui cookies ogni anno.',
 	'COOKIE_LEFT'						=> 'Sinistra',
@@ -58,5 +58,8 @@ $lang = array_merge($lang, array(
 	'COOKIE_SHOW_POLICY'				=> 'Mostra Politica sui cookies',
 	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Se impostato su <strong>Si</strong>, verrà mostrato il link <strong>Politica sui cookies</strong> sulla navbar quando l’opzione <strong>Abilita cookies</strong> è disabilitata. Per esempio, è possibile avere una politica sui cookies senza la necessità di visualizzare il box di accettazione.',
 	'COOKIE_UN_DETECT'					=> 'Controllare se i cookies non sono richiesti',
-	'COOKIE_UN_DETECT_EXPLAIN'			=> 'Si tenterà di rilevare se l’utente <strong>non appartiene</strong> ad uno stato EU e, pertanto, non è tenuto ad accettare la politica sui cookies.<br /><strong>Nota 1:</strong> Questo controllo potrebbe non essere preciso ma ne è consigliato l’utilizzo sui forum dove esiste la possibilità che alcuni utenti appartengano ad uno stato EU.<br /><strong>Nota 2:</strong> Questa opzione sarà effettiva solo se <strong>Abilita cookies</strong> è abilitata.',
+	'COOKIE_UN_DETECT_EXPLAIN'			=> 'Si tenterà di rilevare se l’utente <strong>non appartiene</strong> ad uno stato EU e, pertanto, non è tenuto ad accettare la politica sui cookies.<br /><strong>Nota:</strong> Questo controllo potrebbe non essere preciso ma ne è consigliato l’utilizzo sui forum dove esiste la possibilità che alcuni utenti appartengano ad uno stato EU.',
+
+	'LOG_COOKIE_ERROR'					=> '<strong>Ricerca IP non riuscita</stong>',
+	'LOG_SERVER_ERROR'					=> '<strong>Impossibile connettersi al server IP</strong>',
 ));

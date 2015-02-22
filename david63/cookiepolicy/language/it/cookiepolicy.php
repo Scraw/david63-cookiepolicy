@@ -60,6 +60,4 @@ Alcuni cookies contengono informazioni personali - ad esempio, se fai click su "
 <h3>I cookies provenienti dai social network</h3><p>%1$s potrebbe contenere link a siti di social networking (come Facebook, Twitter o YouTube). Questi siti potrebbero caricare cookies sul vostro dispositivo che non possono essere controllati da %1$s. Per questo motivo, %1$s suggerisce di controllare i siti di social networking per scoprire come vengono utilizzati i cookies.',
 
 	'COOKIE_POLICY'			=> 'Politica sui cookies',
-	'LOG_COOKIE_ERROR'		=> '<strong>Ricerca IP non riuscita</stong>',
-	'LOG_SERVER_ERROR'		=> '<strong>Impossibile connettersi al server IP</strong>',
 ));

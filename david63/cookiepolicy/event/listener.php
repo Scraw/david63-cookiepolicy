@@ -106,7 +106,7 @@ class listener implements EventSubscriberInterface
 
 		// If we have already set the cookie on this device then there is no need to process
 		$cookie_set = $this->request->is_set($this->config['cookie_name'] . '_ca', \phpbb\request\request_interface::COOKIE) ? true : false;
-		if ($this->config['cookie_policy_enabled'] && !$cookie_set)
+		if ($this->config['cookie_policy_enabled'] && !$cookie_set && !$this->user->data['is_bot'])
 		{
 			// Only need to do this if we are trying to detect if cookie required
 			if (($this->config['cookie_eu_detect']) || $this->config['cookie_not_eu_detect'])
@@ -114,26 +114,36 @@ class listener implements EventSubscriberInterface
 				// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
 				$cookie_enabled = true;
 
-				$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
-
-				$context	= stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
-				$ip_query	= @file_get_contents('http://ip-api.com/json/' . $this->user->data['session_ip'] . '?fields=status,countryCode', false, $context);
-				if($ip_query === false)
+				// Check if cURL is available
+				if (in_array('curl', get_loaded_extensions()))
 				{
-					$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'], 'LOG_SERVER_ERROR');
-				}
-				else
-				{
-					$ip_array = json_decode($ip_query, true);
+					$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
 
-					if ($ip_array['status'] == 'success' && !in_array($ip_array['countryCode'], $eu_array))
+					$curl_handle = curl_init();
+					curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+					curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+					curl_setopt($curl_handle, CURLOPT_URL, 'http://ip-api.com/json/' . $this->user->ip .'?fields=status,countryCode');
+
+					$ip_query = curl_exec($curl_handle);
+					curl_close($curl_handle);
+
+					if (empty($ip_query) && $this->config['cookie_log_errors'])
 					{
-						// IP not in an EU country therefore we do not need to invoke the Cookie Policy
-						$cookie_enabled = false;
+						$this->log->add('critical', $this->user->data['user_id'], $this->user->ip, 'LOG_SERVER_ERROR');
 					}
-					else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'] == true)
+					else
 					{
-						$this->log->add('critical', $this->user->data['user_id'], $this->user->data['user_ip'],'LOG_COOKIE_ERROR');
+						$ip_array = json_decode($ip_query, true);
+
+						if ($ip_array['status'] == 'success' && !in_array($ip_array['countryCode'], $eu_array))
+						{
+							// IP not in an EU country therefore we do not need to invoke the Cookie Policy
+							$cookie_enabled = false;
+						}
+						else if ($ip_array['status'] != 'success' && $this->config['cookie_log_errors'])
+						{
+							$this->log->add('critical', $this->user->data['user_id'], $this->user->ip, 'LOG_COOKIE_ERROR');
+						}
 					}
 				}
 			}

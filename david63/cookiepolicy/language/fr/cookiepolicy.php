@@ -59,6 +59,4 @@ Certains cookies contiennent des informations personnelles – par exemple, si v
 <h3>Les cookies sur %1$s provenant des sites des réseaux sociaux</h3><p>%1$s peut avoir des liens vers des sites de réseaux sociaux (exemple Facebook, Twitter ou YouTube). Ces sites peuvent également placer des cookies sur votre appareil et %1$s ne gère pas la façon dont ils utilisent leurs cookies, donc %1$s vous suggère de vérifier leurs sites pour voir comment ils utilisent les cookies.',
 
 	'COOKIE_POLICY'			=> 'Politique des cookies',
-	'LOG_COOKIE_ERROR'		=> '<strong>Échec de la recherche d’IP</stong>',
-	'LOG_SERVER_ERROR'		=> '<strong>Impossible de se connecter à l’IP du serveur</strong>',
 ));
