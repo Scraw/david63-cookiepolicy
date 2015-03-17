@@ -85,7 +85,7 @@ class admin_controller implements admin_interface
 
 			// Option settings have been updated and logged
 			// Confirm this to the user and provide link back to previous page
-			trigger_error($this->user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
+			trigger_error($this->user->lang('CONFIG_UPDATED') . adm_back_link($this->u_action));
 		}
 
 		// Set output vars for display in the template
@@ -93,7 +93,6 @@ class admin_controller implements admin_interface
 			'COOKIE_BOX_POSITION'			=> isset($this->config['cookie_box_position']) ? $this->config['cookie_box_position'] : '',
 			'COOKIE_POLICY_ENABLED'			=> isset($this->config['cookie_policy_enabled']) ? $this->config['cookie_policy_enabled'] : '',
 			'COOKIE_POLICY_EU_DETECT'		=> isset($this->config['cookie_eu_detect']) ? $this->config['cookie_eu_detect'] : '',
-			'COOKIE_POLICY_NOT_EU_DETECT'	=> isset($this->config['cookie_not_eu_detect']) ? $this->config['cookie_not_eu_detect'] : '',
 			'COOKIE_POLICY_EXPIRE'			=> isset($this->config['cookie_expire']) ? $this->config['cookie_expire'] : '',
 			'COOKIE_POLICY_RETAIN'			=> isset($this->config['cookie_policy_retain']) ? $this->config['cookie_policy_retain'] : '',
 			'COOKIE_POLICY_LOG_ERRORS'		=> isset($this->config['cookie_log_errors']) ? $this->config['cookie_log_errors'] : '',
@@ -116,7 +115,6 @@ class admin_controller implements admin_interface
 			$this->config->set('cookie_eu_detect', $this->request->variable('cookie_eu_detect', ''));
 			$this->config->set('cookie_expire', $this->request->variable('cookie_expire', 0));
 			$this->config->set('cookie_log_errors', $this->request->variable('cookie_log_errors', 0));
-			$this->config->set('cookie_not_eu_detect', $this->request->variable('cookie_not_eu_detect', 0));
 			$this->config->set('cookie_on_index', $this->request->variable('cookie_on_index', 0));
 			$this->config->set('cookie_policy_enabled', $this->request->variable('cookie_policy_enabled', ''));
 			$this->config->set('cookie_policy_retain', $this->request->variable('cookie_policy_retain', 0));

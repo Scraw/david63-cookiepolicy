@@ -109,7 +109,7 @@ class listener implements EventSubscriberInterface
 		if ($this->config['cookie_policy_enabled'] && !$cookie_set && !$this->user->data['is_bot'])
 		{
 			// Only need to do this if we are trying to detect if cookie required
-			if (($this->config['cookie_eu_detect']) || $this->config['cookie_not_eu_detect'])
+			if ($this->config['cookie_eu_detect'])
 			{
 				// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
 				$cookie_enabled = true;
