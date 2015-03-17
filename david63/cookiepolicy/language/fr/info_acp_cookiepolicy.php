@@ -44,7 +44,11 @@ $lang = array_merge($lang, array(
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position de la boite d’acceptation des cookies sur la gauche ou la droite.',
 
 	'COOKIE_DETECT'						=> 'Détecter si le cookie est nécessaire',
+<<<<<<< HEAD
 	'COOKIE_DETECT_EXPLAIN'				=> 'Tente de détecter si l’utilisateur est situé dans un état de l’UE et implique l’acceptation des cookies pour cet utilisateur.<br /><strong>Note:</strong> La détection peut ne pas être exacte et elle n’est pas recommandée pour les forums où la majorité des utilisateurs proviennent de l’UE.',
+=======
+	'COOKIE_DETECT_EXPLAIN'				=> 'Tente de détecter si l’utilisateur <strong>est situé</strong> dans un état de l’UE et implique l’acceptation des cookies pour cet utilisateur.<br /><strong>Note :</strong> La détection peut ne pas être exacte et elle n’est pas recommandée pour les forums où la majorité des utilisateurs proviennent de l’UE.',
+>>>>>>> origin/master
 
 	'COOKIE_EXPIRE'						=> 'Expiration du cookie',
 	'COOKIE_EXPIRE_EXPLAIN'				=> 'Paramétrer cette option sur oui oblige l’utilisateur à accepter la politique des cookies chaque année.',
@@ -71,6 +75,12 @@ $lang = array_merge($lang, array(
 	'COOKIE_SHOW_POLICY'				=> 'Afficher la politique des cookies',
 	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Paramétrer cette option sur oui affichera le lien de la barre de navigation de la politique des cookies lorsque la politique des cookies est désactivée, par exemple vous pouvez avoir une politique des cookies sans la nécessité d’avoir la boîte d’acceptation.',
 
+<<<<<<< HEAD
+=======
+	'COOKIE_UN_DETECT'					=> 'Détecter si les cookies ne sont pas nécessaires',
+	'COOKIE_UN_DETECT_EXPLAIN'			=> 'Tente de détecter si l’utilisateur <strong>n’est pas situé</strong> dans un état de l’UE et donc ne sera pas tenu d’accepter la politique des cookies.<br /><strong>Note :</strong> La détection peut ne pas être exacte mais elle peut être utile pour les forums où il y a une possibilité que certains utilisateurs proviennent de l’UE.',
+
+>>>>>>> origin/master
 	'LOG_COOKIE_ERROR'					=> '<strong>Échec de la recherche d’IP</stong>',
 	'LOG_SERVER_ERROR'					=> '<strong>Impossible de se connecter à l’IP du serveur</strong>',
 ));
