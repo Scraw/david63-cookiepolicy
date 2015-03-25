@@ -46,8 +46,8 @@ class listener implements EventSubscriberInterface
 	* @param \phpbb\log\log				$log		phpBB log
 	* @param \phpbb\controller\helper	$helper		Helper object
 	* @param \phpbb\request\request		$request	Request object
-	* @return \david63\cookiepolicy\event\listener
 	*
+	* @return \david63\cookiepolicy\event\listener
 	* @access public
 	*/
 	public function __construct(\phpbb\config\config $config, \phpbb\template\twig\twig $template, \phpbb\user $user, \phpbb\log\log $log, \phpbb\controller\helper $helper, \phpbb\request\request $request)
@@ -106,6 +106,7 @@ class listener implements EventSubscriberInterface
 
 		// If we have already set the cookie on this device then there is no need to process
 		$cookie_set = $this->request->is_set($this->config['cookie_name'] . '_ca', \phpbb\request\request_interface::COOKIE) ? true : false;
+
 		if ($this->config['cookie_policy_enabled'] && !$cookie_set && !$this->user->data['is_bot'])
 		{
 			// Only need to do this if we are trying to detect if cookie required
@@ -114,7 +115,7 @@ class listener implements EventSubscriberInterface
 				// Setting this to true here means that if there is a problem with the IP lookup then the cookie will be enabled - just in case we have got it wrong!
 				$cookie_enabled = true;
 
-				// Check if cURL is available
+				// Check if cURL is available on the server
 				if (in_array('curl', get_loaded_extensions()))
 				{
 					$eu_array = array('AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'EU', 'FI', 'FR', 'FX', 'GB', 'GR', 'HR', 'HU', 'IE', 'IM', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK', 'UK');
@@ -146,27 +147,37 @@ class listener implements EventSubscriberInterface
 						}
 					}
 				}
+				else if ($this->config['cookie_log_errors'])
+				{
+					$this->log->add('critical', $this->user->data['user_id'], $this->user->ip, 'LOG_CURL_ERROR');
+				}
 			}
 
 			$this->template->assign_vars(array(
-				'COOKIE_CLASS'		=> $this->config['cookie_box_position'] ? addslashes('cookie-box rightside') : addslashes('cookie-box leftside'),
-				'COOKIE_EXPIRES'	=> addslashes($this->config['cookie_expire']),
-				'COOKIE_NAME'		=> addslashes($this->config['cookie_name']),
+				'COOKIE_BOX_BG_COLOUR'		=> addslashes($this->config['cookie_box_bg_colour']),
+				'COOKIE_BOX_HREF_COLOUR'	=> addslashes($this->config['cookie_box_href_colour']),
+				'COOKIE_BOX_TXT_COLOUR'		=> addslashes($this->config['cookie_box_txt_colour']),
+				'COOKIE_CLASS'				=> $this->config['cookie_box_position'] ? addslashes('cookie-box rightside') : addslashes('cookie-box leftside'),
+				'COOKIE_EXPIRES'			=> addslashes($this->config['cookie_expire']),
+				'COOKIE_NAME'				=> addslashes($this->config['cookie_name']),
+
+				'S_COOKIE_CUSTOM_BOX'		=> $this->config['cookie_custom_box'],
 			));
 		}
 
 		$this->template->assign_vars(array(
-			'COOKIE_ENABLED'		=> $cookie_enabled,
 			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
 			'SHOW_COOKIE_ACCEPT'	=> $cookie_set,
+
+			'S_COOKIE_ENABLED'		=> $cookie_enabled,
 		));
 	}
 
 	public function page_footer($event)
 	{
 		$this->template->assign_vars(array(
-			'COOKIE_ON_INDEX'		=> $this->config['cookie_on_index'],
-			'COOKIE_SHOW_POLICY'	=> $this->config['cookie_show_policy'],
+			'S_COOKIE_ON_INDEX'		=> $this->config['cookie_on_index'],
+			'S_COOKIE_SHOW_POLICY'	=> $this->config['cookie_show_policy'],
 
 			'U_COOKIE_PAGE'			=> $this->helper->route('david63_cookiepolicy_controller', array('name' => 'cookie')),
 		));

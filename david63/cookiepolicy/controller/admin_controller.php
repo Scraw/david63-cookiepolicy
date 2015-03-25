@@ -42,6 +42,7 @@ class admin_controller implements admin_interface
 	* @param \phpbb\template\template	$template	Template object
 	* @param \phpbb\user				$user		User object
 	* @param ContainerInterface			$container	Service container interface
+	*
 	* @return \phpbb\boardrules\controller\admin_controller
 	* @access public
 	*/
@@ -66,10 +67,10 @@ class admin_controller implements admin_interface
 		$form_key = 'cookiepolicy_manage';
 		add_form_key($form_key);
 
-		// Is the form being submitted
+		// Is the form being submitted?
 		if ($this->request->is_set_post('submit'))
 		{
-			// Is the submitted form is valid
+			// Is the submitted form is valid?
 			if (!check_form_key($form_key))
 			{
 				trigger_error($this->user->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
@@ -90,14 +91,21 @@ class admin_controller implements admin_interface
 
 		// Set output vars for display in the template
 		$this->template->assign_vars(array(
-			'COOKIE_BOX_POSITION'			=> isset($this->config['cookie_box_position']) ? $this->config['cookie_box_position'] : '',
-			'COOKIE_POLICY_ENABLED'			=> isset($this->config['cookie_policy_enabled']) ? $this->config['cookie_policy_enabled'] : '',
-			'COOKIE_POLICY_EU_DETECT'		=> isset($this->config['cookie_eu_detect']) ? $this->config['cookie_eu_detect'] : '',
-			'COOKIE_POLICY_EXPIRE'			=> isset($this->config['cookie_expire']) ? $this->config['cookie_expire'] : '',
-			'COOKIE_POLICY_RETAIN'			=> isset($this->config['cookie_policy_retain']) ? $this->config['cookie_policy_retain'] : '',
-			'COOKIE_POLICY_LOG_ERRORS'		=> isset($this->config['cookie_log_errors']) ? $this->config['cookie_log_errors'] : '',
-			'COOKIE_POLICY_ON_INDEX'		=> isset($this->config['cookie_on_index']) ? $this->config['cookie_on_index'] : '',
-			'COOKIE_SHOW_POLICY'			=> isset($this->config['cookie_show_policy']) ? $this->config['cookie_show_policy'] : '',
+			'COOKIE_BOX_POSITION'		=> isset($this->config['cookie_box_position']) ? $this->config['cookie_box_position'] : '',
+			'COOKIE_BOX_BG_COLOUR'		=> isset($this->config['cookie_box_bg_colour']) ? $this->config['cookie_box_bg_colour'] : '',
+			'COOKIE_BOX_HREF_COLOUR'	=> isset($this->config['cookie_box_href_colour']) ? $this->config['cookie_box_href_colour'] : '',
+			'COOKIE_BOX_TXT_COLOUR'		=> isset($this->config['cookie_box_txt_colour']) ? $this->config['cookie_box_txt_colour'] : '',
+			'COOKIE_CUSTOM_BOX'			=> isset($this->config['cookie_custom_box']) ? $this->config['cookie_custom_box'] : '',
+			'COOKIE_CUSTOM_PAGE'		=> isset($this->config['cookie_custom_page']) ? $this->config['cookie_custom_page'] : '',
+			'COOKIE_PAGE_BG_COLOUR'		=> isset($this->config['cookie_page_bg_colour']) ? $this->config['cookie_page_bg_colour'] : '',
+			'COOKIE_PAGE_TXT_COLOUR'	=> isset($this->config['cookie_page_txt_colour']) ? $this->config['cookie_page_txt_colour'] : '',
+			'COOKIE_POLICY_ENABLED'		=> isset($this->config['cookie_policy_enabled']) ? $this->config['cookie_policy_enabled'] : '',
+			'COOKIE_POLICY_EU_DETECT'	=> isset($this->config['cookie_eu_detect']) ? $this->config['cookie_eu_detect'] : '',
+			'COOKIE_POLICY_EXPIRE'		=> isset($this->config['cookie_expire']) ? $this->config['cookie_expire'] : '',
+			'COOKIE_POLICY_RETAIN'		=> isset($this->config['cookie_policy_retain']) ? $this->config['cookie_policy_retain'] : '',
+			'COOKIE_POLICY_LOG_ERRORS'	=> isset($this->config['cookie_log_errors']) ? $this->config['cookie_log_errors'] : '',
+			'COOKIE_POLICY_ON_INDEX'	=> isset($this->config['cookie_on_index']) ? $this->config['cookie_on_index'] : '',
+			'COOKIE_SHOW_POLICY'		=> isset($this->config['cookie_show_policy']) ? $this->config['cookie_show_policy'] : '',
 
 			'U_ACTION' => $this->u_action,
 		));
@@ -111,26 +119,20 @@ class admin_controller implements admin_interface
 	*/
 	protected function set_options()
 	{
+		$this->config->set('cookie_box_bg_colour', $this->request->variable('cookie_box_bg_colour', ''));
+		$this->config->set('cookie_box_href_colour', $this->request->variable('cookie_box_href_colour', ''));
 		$this->config->set('cookie_box_position', $this->request->variable('cookie_box_position', ''));
-			$this->config->set('cookie_eu_detect', $this->request->variable('cookie_eu_detect', ''));
-			$this->config->set('cookie_expire', $this->request->variable('cookie_expire', 0));
-			$this->config->set('cookie_log_errors', $this->request->variable('cookie_log_errors', 0));
-			$this->config->set('cookie_on_index', $this->request->variable('cookie_on_index', 0));
-			$this->config->set('cookie_policy_enabled', $this->request->variable('cookie_policy_enabled', ''));
-			$this->config->set('cookie_policy_retain', $this->request->variable('cookie_policy_retain', 0));
-			$this->config->set('cookie_show_policy', $this->request->variable('cookie_show_policy', 0));
+		$this->config->set('cookie_box_txt_colour', $this->request->variable('cookie_box_txt_colour', ''));
+		$this->config->set('cookie_custom_box', $this->request->variable('cookie_custom_box', ''));
+		$this->config->set('cookie_custom_page', $this->request->variable('cookie_custom_page', 0));
+		$this->config->set('cookie_eu_detect', $this->request->variable('cookie_eu_detect', ''));
+		$this->config->set('cookie_expire', $this->request->variable('cookie_expire', 0));
+		$this->config->set('cookie_log_errors', $this->request->variable('cookie_log_errors', 0));
+		$this->config->set('cookie_on_index', $this->request->variable('cookie_on_index', 0));
+		$this->config->set('cookie_page_bg_colour', $this->request->variable('cookie_page_bg_colour', ''));
+		$this->config->set('cookie_page_txt_colour', $this->request->variable('cookie_page_txt_colour', ''));
+		$this->config->set('cookie_policy_enabled', $this->request->variable('cookie_policy_enabled', ''));
+		$this->config->set('cookie_policy_retain', $this->request->variable('cookie_policy_retain', 0));
+		$this->config->set('cookie_show_policy', $this->request->variable('cookie_show_policy', 0));
 	}
-
-	/**
-	* Set page url
-	*
-	* @param string $u_action Custom form action
-	* @return null
-	* @access public
-	*/
-	public function set_page_url($u_action)
-	{
-		$this->u_action = $u_action;
-	}
-
 }

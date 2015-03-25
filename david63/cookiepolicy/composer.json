@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Adds an option for the user to accept the use of cookies, under EU Cookie Directive (2012), on the forum",
 	"homepage": "",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"time": "2014-11-30",
 	"keywords": [
 		"phpbb",
@@ -18,7 +18,13 @@
 			"username": "david63",
 			"email": "david@webworld.xyz",
 			"homepage": "http://webworld.xyz",
-			"role": "Developer"
+			"role": "Developer"},
+			{
+			"name": "Brian Grinstead",
+			"username": "",
+			"email": "",
+			"homepage": "https://github.com/bgrins/spectrum",
+			"role": "Spectrum color picker author"
 		}],
 	"require": {
         "php": ">=5.3.3",

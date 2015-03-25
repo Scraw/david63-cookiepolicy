@@ -39,8 +39,21 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ALL'								=> 'All',
 
+	'CLICK_TO_SELECT'					=> 'Click in the box to select a colour',
+
+	'COOKIE_BOX_BG_COLOUR'				=> 'Custom cookie box background colour',
+	'COOKIE_BOX_BG_COLOUR_EXPLAIN'		=> 'Select the background colour for the Cookie acceptance box.',
+	'COOKIE_BOX_HREF_COLOUR'			=> 'Custom cookie box link colour',
+	'COOKIE_BOX_HREF_COLOUR_EXPLAIN'	=> 'Select the acceptance link colour for the Cookie acceptance box.',
+	'COOKIE_BOX_TXT_COLOUR'				=> 'Custom cookie box text colour',
+	'COOKIE_BOX_TXT_COLOUR_EXPLAIN'		=> 'Select the text colour for the Cookie acceptance box.',
 	'COOKIE_BOX_POSITION'				=> 'Cookie box position',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position the cookie acceptance box on the left or right.',
+
+	'COOKIE_CUSTOM_BOX'					=> 'Use custom cookie box colours',
+	'COOKIE_CUSTOM_BOX_EXPLAIN'			=> 'Use the custom colours for theCookie acceptance box.<br />Setting this to <strong>No</strong> will use the default colours.',
+	'COOKIE_CUSTOM_PAGE'				=> 'Use custom cookie page colours',
+	'COOKIE_CUSTOM_PAGE_EXPLAIN'		=> 'Use the custom colours for theCookie policy page.<br />Setting this to <strong>No</strong> will use the default colours.',
 
 	'COOKIE_DETECT'						=> 'Detect if cookie is required',
 	'COOKIE_DETECT_EXPLAIN'				=> 'This will try to detect if the user is in an EU state and will only require cookie acceptance for these users.<br /><strong>Note:</strong> This may not be accurate and it is not recommended for boards where the majority of users are expected to be from the EU.',
@@ -52,6 +65,11 @@ $lang = array_merge($lang, array(
 
 	'COOKIE_LOG_ERRORS'					=> 'Log errors',
 	'COOKIE_LOG_ERRORS_EXPLAIN'			=> 'Log any errors that are detected when looking up the user’s IP address.',
+
+	'COOKIE_PAGE_BG_COLOUR'				=> 'Custom cookie page background colour',
+	'COOKIE_PAGE_BG_COLOUR_EXPLAIN'		=> 'Select the background colour for the Cookie policy page.',
+	'COOKIE_PAGE_TXT_COLOUR'			=> 'Custom cookie page text colour',
+	'COOKIE_PAGE_TXT_COLOUR_EXPLAIN'	=> 'Select the text colour for the Cookie policy page.',
 
 	'COOKIE_POLICY'						=> 'Cookie policy',
 	'COOKIE_POLICY_ENABLE'				=> 'Cookie policy enable',
@@ -70,6 +88,12 @@ $lang = array_merge($lang, array(
 	'COOKIE_SHOW_POLICY'				=> 'Show cookie policy',
 	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Setting this to yes will display the nav bar link to the cookie policy when the Cookie Policy is disabled, i.e. you can have a cookie policy without the need to have the acceptance box.',
 
+	'CUSTOM_BOX_COLOURS'				=> 'Custom cookie box colours',
+	'CUSTOM_BOX_COLOURS_EXPLAIN'		=> '<strong>Here you can change the colours to suit your style for the Cookie acceptance box.</strong>',
+	'CUSTOM_PAGE_COLOURS'				=> 'Custom cookie page colours',
+	'CUSTOM_PAGE_COLOURS_EXPLAIN'		=> '<strong>Here you can change the colours to suit your style for the Cookie policy page.</strong>',
+
 	'LOG_COOKIE_ERROR'					=> '<strong>Failed IP lookup</stong>',
+	'LOG_CURL_ERROR'					=> '<strong>cURL is not available on this server</stong>',
 	'LOG_SERVER_ERROR'					=> '<strong>Could not connect to IP server</strong>',
 ));

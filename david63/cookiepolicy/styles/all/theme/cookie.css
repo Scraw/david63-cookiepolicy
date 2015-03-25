@@ -12,14 +12,10 @@
     border-radius: 10px;
     border: 1px solid #FFFF8A;
     padding: 10px;
-
-
 	position: fixed;
 	z-index: 10;
 	bottom: 10px;
 	width: 200px;
-
-	/* Edit these to change the text and/or background colours */
 	color: #DBDB00;
     background-color: #00608F;
 }

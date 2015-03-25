@@ -41,7 +41,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_ACCEPT'			=> '[ I accept ]',
 
 	'COOKIE_TEXT'			=> '<h3>How do we use cookies on this forum?</h3>
-
 	<p>We use files known as cookies on %1$s to improve its performance and to enhance your user experience. By using %1$s you agree that we can place these types of files on your device.</p>
 <h3>What are cookies?</h3><p>Cookies are small text files that a website may put on your computer, or mobile device, when you first visit that site or one of its pages.<br /><br />
 There are many functions that a cookie can serve. For example, a cookie will help the website, or another website, to recognise your device the next time you visit it. %1$s uses the term "cookies" in this policy to refer to all files that collect information in this way.<br /><br />

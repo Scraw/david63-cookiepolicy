@@ -18,6 +18,7 @@ class version_1_0_0 extends \phpbb\db\migration\migration
 			array('config.add', array('cookie_eu_detect', '0')),
 			array('config.add', array('cookie_expire', '0')),
 			array('config.add', array('cookie_log_errors', '1')),
+			array('config.add', array('cookie_not_eu_detect', '0')),
 			array('config.add', array('cookie_on_index', '1')),
 			array('config.add', array('cookie_policy_enabled', '0')),
 			array('config.add', array('cookie_policy_retain', '1')),

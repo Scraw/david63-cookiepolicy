@@ -47,7 +47,13 @@ class main_controller implements main_interface
 	*/
 	public function display($name)
 	{
-		$this->template->assign_var('COOKIE_MESSAGE', $this->user->lang('COOKIE_TEXT', $this->config['sitename']));
+		$this->template->assign_vars(array(
+			'COOKIE_MESSAGE'			=> $this->user->lang('COOKIE_TEXT', $this->config['sitename']),
+			'COOKIE_PAGE_BG_COLOUR'		=> $this->config['cookie_page_bg_colour'],
+			'COOKIE_PAGE_TXT_COLOUR'	=> $this->config['cookie_page_txt_colour'],
+
+			'S_COOKIE_CUSTOM_PAGE'		=> $this->config['cookie_custom_page'],
+		));
 
 		return $this->helper->render('cookie_body.html', $name);
 	}
