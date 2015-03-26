@@ -81,8 +81,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_POLICY_ON_INDEX_EXPLAIN'	=> 'Show the cookie policy acceptance box on all pages or only on the index page.',
 	'COOKIE_POLICY_OPTIONS'				=> 'Cookie policy options',
 
-	'COOKIE_RETAIN'						=> 'Retain cookie policy',
-	'COOKIE_RETAIN_EXPLAIN'				=> 'Retain the cookie policy nav bar link once the cookie policy has been accepted.',
 	'COOKIE_RIGHT'						=> 'Right',
 
 	'COOKIE_SHOW_POLICY'				=> 'Show cookie policy',

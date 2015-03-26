@@ -102,7 +102,6 @@ class admin_controller implements admin_interface
 			'COOKIE_POLICY_ENABLED'		=> isset($this->config['cookie_policy_enabled']) ? $this->config['cookie_policy_enabled'] : '',
 			'COOKIE_POLICY_EU_DETECT'	=> isset($this->config['cookie_eu_detect']) ? $this->config['cookie_eu_detect'] : '',
 			'COOKIE_POLICY_EXPIRE'		=> isset($this->config['cookie_expire']) ? $this->config['cookie_expire'] : '',
-			'COOKIE_POLICY_RETAIN'		=> isset($this->config['cookie_policy_retain']) ? $this->config['cookie_policy_retain'] : '',
 			'COOKIE_POLICY_LOG_ERRORS'	=> isset($this->config['cookie_log_errors']) ? $this->config['cookie_log_errors'] : '',
 			'COOKIE_POLICY_ON_INDEX'	=> isset($this->config['cookie_on_index']) ? $this->config['cookie_on_index'] : '',
 			'COOKIE_SHOW_POLICY'		=> isset($this->config['cookie_show_policy']) ? $this->config['cookie_show_policy'] : '',
@@ -132,7 +131,6 @@ class admin_controller implements admin_interface
 		$this->config->set('cookie_page_bg_colour', $this->request->variable('cookie_page_bg_colour', ''));
 		$this->config->set('cookie_page_txt_colour', $this->request->variable('cookie_page_txt_colour', ''));
 		$this->config->set('cookie_policy_enabled', $this->request->variable('cookie_policy_enabled', ''));
-		$this->config->set('cookie_policy_retain', $this->request->variable('cookie_policy_retain', 0));
 		$this->config->set('cookie_show_policy', $this->request->variable('cookie_show_policy', 0));
 	}
 }

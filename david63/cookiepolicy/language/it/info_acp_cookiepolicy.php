@@ -58,8 +58,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_POLICY_ON_INDEX_EXPLAIN'	=> 'Mostra il box di accettazione dei cookies su tutte le pagine o solo su index.',
 	'COOKIE_POLICY_OPTIONS'				=> 'Opzioni',
 
-	'COOKIE_RETAIN'						=> 'Mantieni cookies',
-	'COOKIE_RETAIN_EXPLAIN'				=> 'Mantenere il link <strong>Politica sui cookies</strong> sulla navbar dopo aver accettato la politica dei cookies.',
 	'COOKIE_RIGHT'						=> 'Destra',
 
 	'COOKIE_SHOW_POLICY'				=> 'Mostra Politica sui cookies',

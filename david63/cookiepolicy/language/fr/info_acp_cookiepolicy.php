@@ -82,8 +82,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_POLICY_ON_INDEX_EXPLAIN'	=> 'Afficher la boite d’acceptation de la politique des cookies sur toutes les pages ou seulement sur la page de l’index.',
 	'COOKIE_POLICY_OPTIONS'				=> 'Options de la politique des cookies',
 
-	'COOKIE_RETAIN'						=> 'Conserver la politique des cookies',
-	'COOKIE_RETAIN_EXPLAIN'				=> 'Conserver le lien de la barre de navigation de la politique des cookies une fois que la politique des cookies a été acceptée.',
 	'COOKIE_RIGHT'						=> 'Droite',
 
 	'COOKIE_SHOW_POLICY'				=> 'Afficher la politique des cookies',

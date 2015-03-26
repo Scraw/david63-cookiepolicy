@@ -166,9 +166,7 @@ class listener implements EventSubscriberInterface
 		}
 
 		$this->template->assign_vars(array(
-			'COOKIE_RETAINED'		=> $this->config['cookie_policy_retain'],
-			'SHOW_COOKIE_ACCEPT'	=> $cookie_set,
-
+			'S_SHOW_COOKIE_ACCEPT'	=> $cookie_set,
 			'S_COOKIE_ENABLED'		=> $cookie_enabled,
 		));
 	}

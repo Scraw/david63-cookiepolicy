@@ -30,6 +30,7 @@ class version_1_1_0 extends \phpbb\db\migration\migration
 			array('config.add', array('cookie_page_txt_colour', '#000000')),
 
 			array('config.remove', array('cookie_not_eu_detect')),
+			array('config.remove', array('cookie_policy_retain')),
 		);
 	}
 }

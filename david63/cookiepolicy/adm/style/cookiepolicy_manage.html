@@ -27,20 +27,14 @@
 
 		<dl>
 			<dt><label for="cookie_on_index">{L_COOKIE_POLICY_ON_INDEX}{L_COLON}</label><br /><span>{L_COOKIE_POLICY_ON_INDEX_EXPLAIN}</span></dt>
-			<dd><label><input type="radio" class="radio" name="cookie_on_index" value="1" id="cookie_on_index"<!-- IF COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF -->/> {L_ALL}</label>
-				<label><input type="radio" class="radio" name="cookie_on_index" value="0" <!-- IF not COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF --> /> {L_INDEX}</label></dd>
+			<dd><label><input type="radio" class="radio" name="cookie_on_index" value="1" <!-- IF COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF --> /> {L_INDEX}</label>
+				<label><input type="radio" class="radio" name="cookie_on_index" value="0" id="cookie_on_index"<!-- IF not COOKIE_POLICY_ON_INDEX --> checked="checked"<!-- ENDIF -->/> {L_ALL}</label></dd>
 		</dl>
 
 		<dl>
 			<dt><label for="cookie_expire">{L_COOKIE_EXPIRE}{L_COLON}</label><br /><span>{L_COOKIE_EXPIRE_EXPLAIN}</span></dt>
 			<dd><label><input type="radio" class="radio" name="cookie_expire" value="1" id="cookie_expire"<!-- IF COOKIE_POLICY_EXPIRE --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
 				<label><input type="radio" class="radio" name="cookie_expire" value="0" <!-- IF not COOKIE_POLICY_EXPIRE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
-		</dl>
-
-		<dl>
-			<dt><label for="cookie_policy_retain">{L_COOKIE_RETAIN}{L_COLON}</label><br /><span>{L_COOKIE_RETAIN_EXPLAIN}</span></dt>
-			<dd><label><input type="radio" class="radio" name="cookie_policy_retain" value="1" id="cookie_policy_retain"<!-- IF COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
-				<label><input type="radio" class="radio" name="cookie_policy_retain" value="0" <!-- IF not COOKIE_POLICY_RETAIN --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
 		</dl>
 
 		<dl>
@@ -87,7 +81,7 @@
 		<legend>{L_CUSTOM_PAGE_COLOURS}</legend>
 
 		<p>{L_CUSTOM_PAGE_COLOURS_EXPLAIN}</p><br />
-		
+
 		<dl>
 			<dt><label for="cookie_custom_page">{L_COOKIE_CUSTOM_PAGE}{L_COLON}</label><br /><span>{L_COOKIE_CUSTOM_PAGE_EXPLAIN}</span></dt>
 			<dd><label><input type="radio" class="radio" name="cookie_custom_page" value="1" id="cookie_custom_page"<!-- IF COOKIE_CUSTOM_PAGE --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
