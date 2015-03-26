@@ -42,7 +42,6 @@ $lang = array_merge($lang, array(
 	'COOKIE_ACCEPT'			=> '[ J’accepte ]',
 
 	'COOKIE_TEXT'			=> '<h3>Comment utilisons-nous les cookies sur ce forum ?</h3>
-
 	<p>Nous utilisons des fichiers appelés cookies sur %1$s pour améliorer ses performances et améliorer votre expérience utilisateur. En utilisant %1$s vous acceptez que nous pouvons placer ces types de fichiers sur votre appareil.</p>
 <h3>Que sont les cookies ?</h3><p>Les cookies sont de petits fichiers texte qu’un site WEB peut stocker sur votre ordinateur ou votre appareil mobile, lorsque vous visitez pour la première fois un site ou l’une de ses pages.<br /><br />
 Il y a beaucoup de fonctions pour lesquelles un cookie peut servir. Par exemple, un cookie aidera le site ou un autre site à reconnaître votre appareil la prochaine fois que vous le visiterez. %1$s utilise le terme “cookies” dans sa politique pour se référer à tous les fichiers qui recueillent des renseignements de cette manière.<br /><br />
