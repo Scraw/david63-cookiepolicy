@@ -40,11 +40,24 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ALL'								=> 'Tous',
 
+	'CLICK_TO_SELECT'					=> 'Cliquer dans la boite pour sélectionner une couleur',
+
+	'COOKIE_BOX_BG_COLOUR'				=> 'Couleur personnalisée de l’arrière-plan de la boite des cookies',
+	'COOKIE_BOX_BG_COLOUR_EXPLAIN'		=> 'Sélectionner une couleur d’arrière-plan pour la boite d’acceptation des cookies.',
+	'COOKIE_BOX_HREF_COLOUR'			=> 'Couleur personnalisée du lien de la boite des cookies',
+	'COOKIE_BOX_HREF_COLOUR_EXPLAIN'	=> 'Sélectionner la couleur du lien d’acceptation pour la boite d’acceptation des cookies.',
+	'COOKIE_BOX_TXT_COLOUR'				=> 'Couleur personnalisée du texte de la boite des cookies',
+	'COOKIE_BOX_TXT_COLOUR_EXPLAIN'		=> 'Sélectionner la couleur du texte pour la boite d’acceptation des cookies.',
 	'COOKIE_BOX_POSITION'				=> 'Position de la boite des cookies',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Position de la boite d’acceptation des cookies sur la gauche ou la droite.',
 
+	'COOKIE_CUSTOM_BOX'					=> 'Utiliser des couleurs personnalisées pour la boite des cookies',
+	'COOKIE_CUSTOM_BOX_EXPLAIN'			=> 'Utiliser des couleurs personnalisées pour la boite d’acceptation des cookies.<br />Paramétrer sur <strong>Non</strong> pour utiliser les couleurs par défaut.',
+	'COOKIE_CUSTOM_PAGE'				=> 'Utiliser des couleurs personnalisées pour la page des cookies',
+	'COOKIE_CUSTOM_PAGE_EXPLAIN'		=> 'Utiliser des couleurs personnalisées pour la page de la politique des cookies.<br />Paramétrer sur <strong>Non</strong> pour utiliser les couleurs par défaut.',
+
 	'COOKIE_DETECT'						=> 'Détecter si le cookie est nécessaire',
-	'COOKIE_DETECT_EXPLAIN'				=> 'Tente de détecter si l’utilisateur est situé dans un état de l’UE et implique l’acceptation des cookies pour cet utilisateur.<br /><strong>Note:</strong> La détection peut ne pas être exacte et elle n’est pas recommandée pour les forums où la majorité des utilisateurs proviennent de l’UE.',
+	'COOKIE_DETECT_EXPLAIN'				=> 'Tente de détecter si l’utilisateur est situé dans un état de l’UE et implique l’acceptation des cookies pour cet utilisateur.<br /><strong>Note :</strong> la détection peut ne pas être exacte et elle n’est pas recommandée pour les forums où la majorité des utilisateurs proviennent de l’UE.',
 
 	'COOKIE_EXPIRE'						=> 'Expiration du cookie',
 	'COOKIE_EXPIRE_EXPLAIN'				=> 'Paramétrer cette option sur oui oblige l’utilisateur à accepter la politique des cookies chaque année.',
@@ -53,6 +66,11 @@ $lang = array_merge($lang, array(
 
 	'COOKIE_LOG_ERRORS'					=> 'Journal des erreurs',
 	'COOKIE_LOG_ERRORS_EXPLAIN'			=> 'Ce journal vous fournit la liste des erreurs détectées par adresse IP de l’utilisateur.',
+
+	'COOKIE_PAGE_BG_COLOUR'				=> 'Couleur personnalisée de l’arrière-plan de la page des cookies',
+	'COOKIE_PAGE_BG_COLOUR_EXPLAIN'		=> 'Sélectionner une couleur d’arrière-plan pour la page de la politique des cookies.',
+	'COOKIE_PAGE_TXT_COLOUR'			=> 'Couleur personnalisée du texte de la page des cookies',
+	'COOKIE_PAGE_TXT_COLOUR_EXPLAIN'	=> 'Sélectionner la couleur du texte pour la page de la politique des cookies.',
 
 	'COOKIE_POLICY'						=> 'Politique des cookies',
 	'COOKIE_POLICY_ENABLE'				=> 'Activer la politique des cookies',
@@ -71,6 +89,12 @@ $lang = array_merge($lang, array(
 	'COOKIE_SHOW_POLICY'				=> 'Afficher la politique des cookies',
 	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Paramétrer cette option sur oui affichera le lien de la barre de navigation de la politique des cookies lorsque la politique des cookies est désactivée, par exemple vous pouvez avoir une politique des cookies sans la nécessité d’avoir la boîte d’acceptation.',
 
+	'CUSTOM_BOX_COLOURS'				=> 'Couleurs personnalisées de la boite des cookies',
+	'CUSTOM_BOX_COLOURS_EXPLAIN'		=> '<strong>Ici vous pouvez modifier les couleurs selon votre style pour la boite d’acceptation des cookies.</strong>',
+	'CUSTOM_PAGE_COLOURS'				=> 'Couleurs personnalisées de la page des cookies',
+	'CUSTOM_PAGE_COLOURS_EXPLAIN'		=> '<strong>Ici vous pouvez modifier les couleurs selon votre style pour la page de la politique des cookies.</strong>',
+
 	'LOG_COOKIE_ERROR'					=> '<strong>Échec de la recherche d’IP</stong>',
+	'LOG_CURL_ERROR'					=> '<strong>cURL n’est pas disponible sur ce serveur</stong>',
 	'LOG_SERVER_ERROR'					=> '<strong>Impossible de se connecter à l’IP du serveur</strong>',
 ));

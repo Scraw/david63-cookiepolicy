@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'COOKIE_ACCEPT_TEXT'	=> 'Ce forum utilise les cookies pour vous offrir la meilleure et la plus pertinente des expériences utilisateur. En utilisant ce forum, vous acceptez cette politique.<br /><br />Vous pouvez en savoir plus sur les cookies utilisés en cliquant sur la “Politique des cookies” sur la page principale.<br /><br />',
+	'COOKIE_ACCEPT_TEXT'	=> 'Ce forum utilise les cookies pour vous offrir la meilleure et la plus pertinente des expériences utilisateur. En utilisant ce forum, vous acceptez cette politique.<br /><br />Vous pouvez en savoir plus sur les cookies utilisés en cliquant sur la « Politique des cookies » sur la page principale.<br /><br />',
 	'COOKIE_ACCEPT'			=> '[ J’accepte ]',
 
 	'COOKIE_TEXT'			=> '<h3>Comment utilisons-nous les cookies sur ce forum ?</h3>
-
 	<p>Nous utilisons des fichiers appelés cookies sur %1$s pour améliorer ses performances et améliorer votre expérience utilisateur. En utilisant %1$s vous acceptez que nous pouvons placer ces types de fichiers sur votre appareil.</p>
 <h3>Que sont les cookies ?</h3><p>Les cookies sont de petits fichiers texte qu’un site WEB peut stocker sur votre ordinateur ou votre appareil mobile, lorsque vous visitez pour la première fois un site ou l’une de ses pages.<br /><br />
-Il y a beaucoup de fonctions pour lesquelles un cookie peut servir. Par exemple, un cookie aidera le site ou un autre site à reconnaître votre appareil la prochaine fois que vous le visiterez. %1$s utilise le terme “cookies” dans sa politique pour se référer à tous les fichiers qui recueillent des renseignements de cette manière.<br /><br />
-Certains cookies contiennent des informations personnelles – par exemple, si vous cliquez sur “Se souvenir de moi” lors de la connexion, un cookie va stocker votre nom d’utilisateur. La plupart des cookies ne recueillent pas des informations permettant de vous identifier, mais recueillent des informations plus générales telles que comment les utilisateurs sont arrivés et utilisent %1$s, ou l’emplacement général d’un utilisateur.</p>
+Il y a beaucoup de fonctions pour lesquelles un cookie peut servir. Par exemple, un cookie aidera le site ou un autre site à reconnaître votre appareil la prochaine fois que vous le visiterez. %1$s utilise le terme « cookies » dans sa politique pour se référer à tous les fichiers qui recueillent des renseignements de cette manière.<br /><br />
+Certains cookies contiennent des informations personnelles – par exemple, si vous cliquez sur « Se souvenir de moi » lors de la connexion, un cookie va stocker votre nom d’utilisateur. La plupart des cookies ne recueillent pas des informations permettant de vous identifier, mais recueillent des informations plus générales telles que comment les utilisateurs sont arrivés et utilisent %1$s, ou l’emplacement général d’un utilisateur.</p>
 <h3>Quelles sortes de cookies utilise %1$s ?</h3><p>Les cookies peuvent remplir plusieurs fonctions différentes :</P>
 <p><b>1. Les cookies essentiels</b><br />Certains cookies sont indispensables pour le fonctionnement de %1$s. Ces cookies permettent aux services que vous avez spécifiquement demandés de fonctionner.</p>
 <p><b>2. Les cookies de performance</b><br />Ces cookies peuvent recueillir des informations anonymes sur les pages visitées. Par exemple, nous pourrions utiliser des cookies de performance pour garder une trace des pages les plus populaires, pour lesquelles une méthode de liaison entre les pages les plus efficaces détermine pourquoi certaines pages reçoivent des messages d’erreur.</p>
