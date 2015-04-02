@@ -42,11 +42,11 @@ $lang = array_merge($lang, array(
 	'CLICK_TO_SELECT'					=> 'Clic en el cuadro para seleccionar un color',
 
 	'COOKIE_BOX_BG_COLOUR'				=> 'Color personalizado del fondo del cuadro de Cookie',
-	'COOKIE_BOX_BG_COLOUR_EXPLAIN'		=> 'Seleccione el color del fondo del cuadro de aceptación de Cookie.',
-	'COOKIE_BOX_HREF_COLOUR'			=> 'Color personalizado del enlace del cuadro de Cookie',
-	'COOKIE_BOX_HREF_COLOUR_EXPLAIN'	=> 'Seleccione el color del enlace de aceptación del cuadro de aceptación de Cookie.',
+	'COOKIE_BOX_BG_COLOUR_EXPLAIN'		=> 'Seleccione el color del fondo para el cuadro de aceptación de Cookie.',
+	'COOKIE_BOX_HREF_COLOUR'			=> 'Color personalizado del enlace en el cuadro de Cookie',
+	'COOKIE_BOX_HREF_COLOUR_EXPLAIN'	=> 'Seleccione el color del enlace de aceptación en el cuadro de Cookie.',
 	'COOKIE_BOX_TXT_COLOUR'				=> 'Color personalizado del texto del cuadro',
-	'COOKIE_BOX_TXT_COLOUR_EXPLAIN'		=> 'Seleccione el color del texto del cuadro de aceptación de Cookie.',
+	'COOKIE_BOX_TXT_COLOUR_EXPLAIN'		=> 'Seleccione el color del texto en el cuadro de aceptación de Cookie.',
 	'COOKIE_BOX_POSITION'				=> 'Posición del cuadro de Cookie',
 	'COOKIE_BOX_POSITION_EXPLAIN'		=> 'Posición del cuadro de aceptación, a izquierda o derecha.',
 
@@ -72,7 +72,7 @@ $lang = array_merge($lang, array(
 
 	'COOKIE_POLICY'						=> 'Política de Cookies',
 	'COOKIE_POLICY_ENABLE'				=> 'Habilitar Política de Cookies',
-	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Habilitar/Deshabilitar el requisito de que todos los usuarios deban aceptar el uso de Cookies, bajo la directiva de Cookies de la UE (2012), en este foro.',
+	'COOKIE_POLICY_ENABLE_EXPLAIN'		=> 'Habilitar/Deshabilitar el requisito de que todos los usuarios deban aceptar el uso de Cookies, bajo la <a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32002L0058:EN:HTML" target="_blank">Directiva 58/2002/CE</a> y <a href="http://www.boe.es/boe/dias/2012/03/31/pdfs/BOE-A-2012-4442.pdf" target="_blank">RD 13/2012</a>, en este foro.',
 	'COOKIE_POLICY_EXPLAIN'				=> 'Configure las opciones para gestionar la Política de Cookies.',
 	'COOKIE_POLICY_LOG'					=> '<strong>Ajustes de Política de Cookies actualizados</strong>',
 	'COOKIE_POLICY_MANAGE'				=> 'Gestionar ajustes',
@@ -83,7 +83,7 @@ $lang = array_merge($lang, array(
 	'COOKIE_RIGHT'						=> 'Derecha',
 
 	'COOKIE_SHOW_POLICY'   				=> 'Mostrar Política de Cookies',
-	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Fijar esto a sí mostrará el enlace barra de navegación a la política de cookies cuando el Política de Cookies está desactivado, es decir, puede tener una política de cookies sin la necesidad de tener la casilla de aceptación .',
+	'COOKIE_SHOW_POLICY_EXPLAIN'		=> 'Fijar esto a sí mostrará un enlace en la barra de navegación a la página "Política de Cookies" aun cuando la Política de Cookies está deshabilitada, es decir, puede tener una Política de Cookies sin la necesidad de tener la casilla de aceptación.',
 
 	'CUSTOM_BOX_COLOURS'				=> 'Colores personalizados de Cookie',
 	'CUSTOM_BOX_COLOURS_EXPLAIN'		=> '<strong>Aquí usted puede cambiar los colores para adaptarse a su estilo para la caja de aceptación de cookies .</strong>',
